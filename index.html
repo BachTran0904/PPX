@@ -20,9 +20,9 @@
       display: block;
       max-width: 100vw;
       max-height: 100vh;
-      /* Smooth opacity transition for fade */
       opacity: 1;
       transition: opacity 0.4s cubic-bezier(0.4,0,0.2,1);
+      pointer-events: none;   /* Add this line to disable interactions */
     }
   </style>
 </head>
@@ -37,26 +37,22 @@
     function showSlide(index) {
       if (index < 0 || index >= slides.length || isTransitioning) return;
       isTransitioning = true;
-
-      // Start fade-out
       frame.style.opacity = 0;
-
-      // Wait for fade-out to finish before changing src
       setTimeout(() => {
         current = index;
         frame.src = slides[current];
-      }, 400); // matches the CSS transition duration
+      }, 400);
     }
 
-    // When slide loads, fade in
     frame.addEventListener('load', () => {
-      frame.style.opacity = 0; // ensure it's faded out before fading in
+      frame.style.opacity = 0;
       setTimeout(() => {
         frame.style.opacity = 1;
         isTransitioning = false;
-      }, 40); // slight delay to ensure fade in is triggered after src change
+      }, 40);
     });
 
+    // Keyboard arrow navigation
     window.addEventListener('keydown', function(e) {
       if (e.key === "ArrowRight") {
         if (current < slides.length - 1) showSlide(current + 1);
@@ -65,7 +61,19 @@
       }
     });
 
-    // Listen for size message from the slide
+    // Mouse click navigation
+    window.addEventListener('mousedown', function(e) {
+      if (e.button === 0) { // Left click
+        if (current > 0) showSlide(current - 1);
+      }
+    });
+
+    window.addEventListener('contextmenu', function(e) {
+      e.preventDefault(); // Prevent context menu
+      if (current < slides.length - 1) showSlide(current + 1);
+    });
+
+    // Listen for resize message from slide
     window.addEventListener('message', function(event) {
       if (event.data && event.data.type === 'resize-iframe') {
         frame.style.width = event.data.width + 'px';
