@@ -3,10 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>4 điểm mạnh của Smartlog AI</title>
+    <title>Dữ liệu thị trường & tăng trưởng AI SaaS</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <style>
         body {
             font-family: 'Montserrat', sans-serif;
@@ -43,25 +44,30 @@
             opacity: 0.05;
             z-index: 1;
         }
-        .feature-icon {
-            width: 70px;
-            height: 70px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border-radius: 12px;
-            background-color: rgba(0, 194, 182, 0.2);
-            color: #00c2b6;
-        }
-        .feature-card {
+        .data-card {
             background-color: rgba(255, 255, 255, 0.05);
             border-radius: 8px;
             transition: all 0.3s ease;
-            border: 1px solid transparent;
+            border-bottom: 3px solid transparent;
         }
-        .feature-card:hover {
-            border-color: #00c2b6;
-            background-color: rgba(0, 194, 182, 0.1);
+        .data-card:hover {
+            border-bottom-color: #00c2b6;
+            transform: translateY(-5px);
+        }
+        .chart-container {
+            background-color: rgba(255, 255, 255, 0.05);
+            border-radius: 8px;
+            height: 300px;
+            position: relative;
+        }
+        .vertical-market {
+            color: #00c2b6;
+        }
+        .ai-market {
+            color: #ffc107;
+        }
+        .enterprise-market {
+            color: #f06292;
         }
     </style>
 </head>
@@ -78,93 +84,159 @@
             <!-- Header Section -->
             <div class="header-section mb-6">
                 <div class="accent-bar mb-3"></div>
-                <h1 class="text-3xl font-bold mb-2">4 điểm mạnh của Smartlog AI</h1>
-                <p class="text-lg text-gray-300 w-3/4">Không chỉ là chatbot hay công cụ tự động hóa thông thường, Smartlog AI là một người đồng hành thông minh cho ngành logistics</p>
+                <h1 class="text-3xl font-bold mb-2">Dữ liệu thị trường & tăng trưởng AI SaaS</h1>
+                <p class="text-lg text-gray-300 w-3/4">Tăng trưởng bùng nổ trong phân khúc AI và Vertical SaaS cho ngành Logistics</p>
             </div>
             
             <!-- Main Content Section -->
-            <div class="main-content mt-4">
-                <div class="grid grid-cols-2 gap-6">
-                    <!-- Feature 1 -->
-                    <div class="feature-card p-6 flex items-start space-x-4">
-                        <div class="feature-icon text-3xl">
-                            <i class="fas fa-brain"></i>
+            <div class="main-content flex flex-col space-y-6">
+                <!-- Market Data Cards -->
+                <div class="flex justify-between space-x-5 mb-2">
+                    <div class="data-card p-5 flex-1">
+                        <div class="flex items-center mb-2">
+                            <i class="fas fa-chart-line text-2xl mr-3 vertical-market"></i>
+                            <h3 class="text-xl font-semibold vertical-market">Vertical SaaS</h3>
                         </div>
-                        <div>
-                            <h3 class="text-xl font-semibold text-cyan-400 mb-2">Hiểu ý định phức tạp</h3>
-                            <p class="text-gray-300">Sử dụng NLP tiên tiến để hiểu các lệnh logistics đặc thù theo ngữ cảnh, nhận dạng nhu cầu người dùng ngay cả khi được diễn đạt không rõ ràng.</p>
-                            <div class="mt-2 px-3 py-1 bg-blue-900 bg-opacity-50 inline-block rounded text-sm">
-                                <i class="fas fa-check-circle text-green-400 mr-1"></i>
-                                <span>Advanced NLP</span>
-                            </div>
+                        <div class="mb-2">
+                            <span class="text-3xl font-bold vertical-market">317,49 tỷ USD</span>
                         </div>
-                    </div>
-                    
-                    <!-- Feature 2 -->
-                    <div class="feature-card p-6 flex items-start space-x-4">
-                        <div class="feature-icon text-3xl">
-                            <i class="fas fa-project-diagram"></i>
-                        </div>
-                        <div>
-                            <h3 class="text-xl font-semibold text-cyan-400 mb-2">Tự động hóa quy trình</h3>
-                            <p class="text-gray-300">Xâu chuỗi nhiều hành động trên các module khác nhau từ một lệnh duy nhất, tối ưu hóa quy trình làm việc và giảm thiểu thao tác thủ công.</p>
-                            <div class="mt-2 px-3 py-1 bg-blue-900 bg-opacity-50 inline-block rounded text-sm">
-                                <i class="fas fa-cogs text-yellow-400 mr-1"></i>
-                                <span>Process automation</span>
-                            </div>
+                        <p class="text-sm text-gray-400">Quy mô thị trường đến 2032</p>
+                        <div class="mt-3 flex items-center">
+                            <i class="fas fa-arrow-trend-up mr-2"></i>
+                            <span class="font-bold vertical-market text-xl">CAGR 23,9%</span>
                         </div>
                     </div>
                     
-                    <!-- Feature 3 -->
-                    <div class="feature-card p-6 flex items-start space-x-4">
-                        <div class="feature-icon text-3xl">
-                            <i class="fas fa-lightbulb"></i>
+                    <div class="data-card p-5 flex-1">
+                        <div class="flex items-center mb-2">
+                            <i class="fas fa-robot text-2xl mr-3 ai-market"></i>
+                            <h3 class="text-xl font-semibold ai-market">AI SaaS</h3>
                         </div>
-                        <div>
-                            <h3 class="text-xl font-semibold text-cyan-400 mb-2">Thông tin chủ động</h3>
-                            <p class="text-gray-300">Đưa ra lời khuyên có giá trị mà người dùng chưa yêu cầu, dự đoán nhu cầu và cung cấp thông tin hữu ích kịp thời, nâng cao trải nghiệm.</p>
-                            <div class="mt-2 px-3 py-1 bg-blue-900 bg-opacity-50 inline-block rounded text-sm">
-                                <i class="fas fa-chart-line text-cyan-400 mr-1"></i>
-                                <span>Proactive advisor</span>
-                            </div>
+                        <div class="mb-2">
+                            <span class="text-3xl font-bold ai-market">2.973 tỷ USD</span>
+                        </div>
+                        <p class="text-sm text-gray-400">Quy mô thị trường đến 2034</p>
+                        <div class="mt-3 flex items-center">
+                            <i class="fas fa-arrow-trend-up mr-2"></i>
+                            <span class="font-bold ai-market text-xl">CAGR 38,4%</span>
                         </div>
                     </div>
                     
-                    <!-- Feature 4 -->
-                    <div class="feature-card p-6 flex items-start space-x-4">
-                        <div class="feature-icon text-3xl">
-                            <i class="fas fa-database"></i>
+                    <div class="data-card p-5 flex-1">
+                        <div class="flex items-center mb-2">
+                            <i class="fas fa-laptop-code text-2xl mr-3 enterprise-market"></i>
+                            <h3 class="text-xl font-semibold enterprise-market">Phần mềm doanh nghiệp</h3>
                         </div>
-                        <div>
-                            <h3 class="text-xl font-semibold text-cyan-400 mb-2">Dân chủ hóa dữ liệu</h3>
-                            <p class="text-gray-300">Cho phép người dùng không chuyên truy vấn dữ liệu phức tạp qua ngôn ngữ tự nhiên, biến đổi dữ liệu thành thông tin có giá trị cho mọi cấp độ.</p>
-                            <div class="mt-2 px-3 py-1 bg-blue-900 bg-opacity-50 inline-block rounded text-sm">
-                                <i class="fas fa-comments text-purple-400 mr-1"></i>
-                                <span>Natural language queries</span>
-                            </div>
+                        <div class="mb-2">
+                            <span class="text-3xl font-bold enterprise-market">33%</span>
+                        </div>
+                        <p class="text-sm text-gray-400">Tích hợp AI đến 2028</p>
+                        <div class="mt-3 flex items-center">
+                            <i class="fas fa-file-contract mr-2"></i>
+                            <span class="text-sm text-gray-300">Gartner dự báo</span>
                         </div>
                     </div>
                 </div>
                 
-                <div class="highlight-box p-4 mt-6">
-                    <div class="flex items-center space-x-3">
-                        <i class="fas fa-quote-left text-2xl text-cyan-400"></i>
-                        <p class="text-lg italic text-gray-300">"Trợ lý AI Smartlog không chỉ hiểu những gì bạn yêu cầu, mà còn hiểu những gì bạn cần trước khi bạn yêu cầu."</p>
+                <!-- Chart & Context -->
+                <div class="flex space-x-6">
+                    <!-- Left: Chart -->
+                    <div class="w-3/5">
+                        <div class="chart-container p-4">
+                            <h3 class="text-lg font-medium mb-3">So sánh tốc độ tăng trưởng kép hàng năm</h3>
+                            <canvas id="marketComparisonChart" height="220"></canvas>
+                        </div>
+                    </div>
+                    
+                    <!-- Right: Context -->
+                    <div class="w-2/5">
+                        <div class="highlight-box p-4 mb-4">
+                            <h3 class="text-xl font-semibold text-white mb-2">Cơ hội cho ngành Logistics</h3>
+                            <p class="text-gray-300 text-sm">Tốc độ tăng trưởng vượt trội của thị trường AI SaaS (CAGR 38,4%) cho thấy cơ hội lớn cho các doanh nghiệp logistics chuyển đổi số.</p>
+                        </div>
+                        
+                        <div class="space-y-3">
+                            <div class="flex items-start space-x-3">
+                                <i class="fas fa-check-circle text-green-400 mt-1"></i>
+                                <p class="text-sm text-gray-300">Doanh nghiệp logistics đi đầu ứng dụng AI sẽ có lợi thế cạnh tranh đáng kể</p>
+                            </div>
+                            
+                            <div class="flex items-start space-x-3">
+                                <i class="fas fa-check-circle text-green-400 mt-1"></i>
+                                <p class="text-sm text-gray-300">Giai đoạn 2025-2035 là thời điểm vàng để đầu tư chiến lược vào hệ thống AI logistics</p>
+                            </div>
+                            
+                            <div class="flex items-start space-x-3">
+                                <i class="fas fa-check-circle text-green-400 mt-1"></i>
+                                <p class="text-sm text-gray-300">Dự báo: 33% phần mềm doanh nghiệp đã tích hợp AI vào 2028 (Gartner)</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
             
             <!-- Footer Section -->
-            <div class="footer-section flex justify-between items-end mt-6">
+            <div class="footer-section flex justify-between items-end mt-4">
                 <div class="company-info text-sm text-gray-300">
                     <p>© 2025 Smartlog AI</p>
                 </div>
                 <div class="slide-info text-sm text-gray-300">
-                    <p>8 / 19</p>
+                    <p>4 / 12</p>
                 </div>
             </div>
         </div>
     </div>
     <script src="script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const ctx = document.getElementById('marketComparisonChart').getContext('2d');
+            
+            const chart = new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: ['Vertical SaaS', 'AI SaaS', 'Thị trường chung SaaS', 'Logistics truyền thống'],
+                    datasets: [{
+                        label: 'CAGR (%)',
+                        data: [23.9, 38.4, 16.2, 5.8],
+                        backgroundColor: [
+                            '#00c2b6',
+                            '#ffc107',
+                            '#3a86ff',
+                            '#6c757d'
+                        ],
+                        borderWidth: 0,
+                        borderRadius: 5
+                    }]
+                },
+                options: {
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: {
+                            display: false
+                        }
+                    },
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            grid: {
+                                color: 'rgba(255, 255, 255, 0.1)'
+                            },
+                            ticks: {
+                                color: 'rgba(255, 255, 255, 0.7)'
+                            }
+                        },
+                        x: {
+                            grid: {
+                                color: 'rgba(255, 255, 255, 0.1)'
+                            },
+                            ticks: {
+                                color: 'rgba(255, 255, 255, 0.7)'
+                            }
+                        }
+                    }
+                }
+            });
+        });
+    </script>
 </body>
 </html>

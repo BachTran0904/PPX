@@ -1,9 +1,7 @@
-<!DOCTYPE html>
-<html lang="vi">
-<head>
+<html lang="vi"><head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Khung phát triển "Run-Grow-Transform"</title>
+    <title>Tầm nhìn nâng cao &amp; Kiến trúc đa AI Agent phi tập trung</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&amp;display=swap">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
@@ -43,48 +41,206 @@
             opacity: 0.05;
             z-index: 1;
         }
-        .framework-level {
+        .vision-card {
             background-color: rgba(255, 255, 255, 0.05);
-            border: 1px solid rgba(0, 194, 182, 0.3);
-            border-radius: 12px;
-            transition: all 0.2s ease;
+            border-radius: 10px;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255, 255, 255, 0.1);
         }
-        .framework-level:hover {
+        .vision-card:hover {
             background-color: rgba(0, 194, 182, 0.1);
+            border-color: rgba(0, 194, 182, 0.4);
         }
-        .level-icon {
-            width: 70px;
-            height: 70px;
+        .arch-card {
+            background-color: rgba(255, 193, 7, 0.08);
+            border-radius: 10px;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255, 193, 7, 0.2);
+        }
+        .arch-card:hover {
+            background-color: rgba(255, 193, 7, 0.15);
+            border-color: rgba(255, 193, 7, 0.4);
+        }
+        .feature-icon {
+            width: 40px;
+            height: 40px;
             display: flex;
             align-items: center;
             justify-content: center;
-            border-radius: 50%;
-            background-color: rgba(0, 194, 182, 0.2);
-            margin: 0 auto 1rem;
+            border-radius: 8px;
         }
-        .run-icon {
+        .vision-icon {
+            background-color: rgba(0, 194, 182, 0.2);
             color: #00c2b6;
         }
-        .grow-icon {
+        .arch-icon {
+            background-color: rgba(255, 193, 7, 0.2);
             color: #ffc107;
         }
-        .transform-icon {
-            color: #68d391;
+        .benefit-item {
+            position: relative;
+            padding-left: 1.5rem;
         }
-        .price-tag {
-            background-color: rgba(255, 255, 255, 0.1);
-            border-radius: 16px;
-            font-size: 0.85rem;
-            padding: 0.25rem 0.75rem;
-            display: inline-block;
-            margin-top: 0.5rem;
+        .benefit-item::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 7px;
+            width: 8px;
+            height: 8px;
+            background-color: #ffc107;
+            border-radius: 50%;
         }
-        .gartner-logo {
-            width: 80px;
-            opacity: 0.7;
+        .tech-tag {
+            background-color: rgba(0, 0, 0, 0.3);
+            color: #ffc107;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 0.7rem;
+            margin-right: 4px;
+            margin-bottom: 4px;
+            border: 1px solid rgba(255, 193, 7, 0.3);
+        }
+        .diagram-connection {
+            position: absolute;
+            border: 1px dashed rgba(255, 193, 7, 0.4);
+            z-index: -1;
         }
     </style>
-</head>
+<style>._pericles_action_prev,
+._pericles_action_next,
+._pericles_action_play,
+._pericles_action_stop,
+._pericles_action_pause {
+  cursor: pointer;
+  font-size: 19px;
+}
+
+._pericles_action_prev:hover,
+._pericles_action_next:hover,
+._pericles_action_play:hover,
+._pericles_action_stop:hover,
+._pericles_action_pause:hover {
+  font-size: 20px;
+}
+
+._pericles_action_prev:active,
+._pericles_action_next:active,
+._pericles_action_play:active,
+._pericles_action_stop:active,
+._pericles_action_pause:active {
+  font-size: 19px;
+}
+
+img._pericles_action_icon {
+  display: inline-block !important;
+  width: 24px !important;
+  height: 24px !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  vertical-align: top !important;
+  opacity: 0.9 !important;
+}
+
+img._pericles_action_icon:hover {
+  opacity: 1 !important;
+}
+
+ps-section,
+ps-word {
+  display: inline;
+  margin: 0;
+  padding: 0;
+}
+
+ps-word[data-audio-index]:hover {
+  background: #ccc;
+  cursor: crosshair;
+}
+
+ps-section {
+  position: relative;
+  cursor: pointer;
+}
+
+ps-section:hover {
+  background: var(--pericles-section-background);
+}
+
+._pericles_action_container {
+  border-radius: 4px;
+  width: 50px;
+  /* width: 74px; */
+  height: 26px;
+  /* background: linear-gradient(180deg, #ccc, transparent); */
+  background: #eee;
+  line-height: 32px;
+  transition: opacity 0.55s ease-in-out;
+  -moz-transition: opacity 0.55s ease-in-out;
+  -webkit-transition: opacity 0.55s ease-in-out;
+}
+
+._pericles_inspector {
+  border: 1px solid #000;
+  background-color: rgba(102, 136, 253, 0.2) !important;
+  color: #000 !important;
+  /* opacity: 0.6; */
+}
+
+@keyframes _periclesFadeOut {
+  0% {
+    background: #ccc;
+    color: #000;
+  }
+
+  100% {
+    background: transparent;
+    color: inherit;
+  }
+}
+._pericles_word_tracker_style_fade,
+._pericles_prev_word_tracker_style_fade {
+  border-radius: 2px;
+  text-shadow: none;
+}
+
+._pericles_prev_word_tracker_style_fade {
+  background: transparent;
+  animation: _periclesFadeOut 2s ease-out;
+  color: inherit;
+}
+
+rect._pericles_section_highlight_style_background {
+  fill: var(--pericles-section-background);
+  opacity: 0.4;
+}
+
+._pericles_section_highlight_style_background {
+  background: var(--pericles-section-background);
+}
+
+._pericles_section_highlight_style_border {
+  border: 1px solid var(--pericles-section-background);
+}
+
+rect._pericles_section_highlight_style_border {
+  stroke: var(--pericles-section-background);
+}
+
+._pericles_word_tracker_style_background {
+  background: var(--pericles-word-background);
+}
+
+._pericles_word_tracker_style_underline {
+  border-top: 1px solid var(--pericles-word-background);
+  border-bottom: 1px solid var(--pericles-word-background);
+}
+
+._pericles_word_tracker_style_fade {
+  background: var(--pericles-word-background);
+  color: #fff;
+}
+</style></head>
 <body>
     <div class="slide-container flex flex-col">
         <!-- Background pattern -->
@@ -96,113 +252,169 @@
         
         <div class="content-area flex flex-col justify-between p-10 h-full">
             <!-- Header Section -->
-            <div class="header-section mb-6">
+            <div class="header-section mb-3">
                 <div class="accent-bar mb-3"></div>
-                <h1 class="text-3xl font-bold mb-2">Khung phát triển "Run-Grow-Transform"</h1>
-                <p class="text-lg text-gray-300 w-3/4">Theo khung Gartner, đảm bảo sự cân bằng giữa lợi ích ngắn hạn và chuyển đổi dài hạn</p>
+                <div class="flex justify-between items-start">
+                    <div class="w-3/4">
+                        <h1 class="text-3xl font-bold mb-2">Tầm nhìn nâng cao &amp; Kiến trúc multi AI Agent</h1>
+                        <p class="text-lg text-gray-300">Trợ lý AI đáng tin cậy trên nền tảng kiến trúc phi tập trung hiệu quả</p>
+                    </div>
+                    <div class="w-1/4 text-right">
+                        
+                    </div>
+                </div>
             </div>
             
             <!-- Main Content Section -->
-            <div class="main-content">
-                <!-- Framework Description -->
-                <div class="highlight-box p-4 mb-6 w-3/4 flex items-center">
-                    <div class="mr-4">
-                        <img src="https://www.gartner.com/imagesrv/global/svg/gartner-logo-alt.svg" alt="Gartner" class="gartner-logo">
-                    </div>
-                    <div>
-                        <p class="text-gray-300">Mô hình <span class="font-semibold text-cyan-400">Run-Grow-Transform</span> được Gartner khuyến nghị giúp doanh nghiệp logistics phân bổ nguồn lực hợp lý: vừa tối ưu hoạt động hiện tại, vừa thúc đẩy phát triển và đổi mới dài hạn.</p>
-                    </div>
-                </div>
-                
-                <!-- Framework Levels -->
-                <div class="grid grid-cols-3 gap-6 mb-6">
-                    <!-- Level 1 - RUN -->
-                    <div class="framework-level p-6 text-center">
-                        <div class="level-icon run-icon">
-                            <i class="fas fa-tachometer-alt text-3xl"></i>
-                        </div>
-                        <h3 class="text-xl font-bold text-cyan-400 mb-3">RUN</h3>
-                        <h4 class="text-lg font-medium text-white mb-3">Tối ưu hóa hiệu quả & chi phí</h4>
-                        <p class="text-sm text-gray-300 mb-4">Tự động hóa các tác vụ lặp lại, nâng cao hiệu quả hoạt động cơ bản và giảm thiểu chi phí vận hành thông qua AI đơn giản.</p>
-                        <div class="price-tag text-cyan-400">
-                            $25,000 - $400,000
-                        </div>
-                        <div class="mt-4 text-left">
-                            <p class="text-sm text-gray-400 mb-1">Ứng dụng tiêu biểu:</p>
-                            <ul class="text-xs text-gray-300 list-disc pl-5 space-y-1">
-                                <li>Conversational AI Customer Support</li>
-                                <li>AI Agent Vision</li>
-                                <li>Basic Fraud Detection</li>
-                            </ul>
-                        </div>
-                    </div>
+            <div class="main-content flex-1">
+                <!-- Enhanced Vision Section -->
+                <div class="mb-5">
+                    <h2 class="text-xl font-semibold text-cyan-400 mb-3 flex items-center">
+                        <i class="fas fa-eye mr-2"></i>
+                        Tầm nhìn nâng cao: Trợ lý AI tin cậy và có trách nhiệm
+                    </h2>
                     
-                    <!-- Level 2 - GROW -->
-                    <div class="framework-level p-6 text-center">
-                        <div class="level-icon grow-icon">
-                            <i class="fas fa-chart-line text-3xl"></i>
+                    <div class="grid grid-cols-2 gap-4">
+                        <!-- Vision Feature 1 -->
+                        <div class="vision-card p-3 flex">
+                            <div class="feature-icon vision-icon mr-3 flex-shrink-0">
+                                <i class="fas fa-comments"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-md font-semibold text-cyan-400">Intent Understanding with Disambiguation</h4>
+                                <p class="text-xs text-gray-300 mt-1">Chủ động đặt câu hỏi làm rõ yêu cầu mơ hồ trước khi thực thi, giảm thiểu nguy cơ thực hiện sai lệnh trong logistics</p>
+                            </div>
                         </div>
-                        <h3 class="text-xl font-bold text-yellow-400 mb-3">GROW</h3>
-                        <h4 class="text-lg font-medium text-white mb-3">Nâng cao quyết định & tối ưu quy trình</h4>
-                        <p class="text-sm text-gray-300 mb-4">Tích hợp AI vào quy trình cốt lõi, hỗ trợ ra quyết định thông minh và nâng cao khả năng cạnh tranh dựa trên dữ liệu.</p>
-                        <div class="price-tag text-yellow-400">
-                            $50,000 - $400,000
+                        
+                        <!-- Vision Feature 2 -->
+                        <div class="vision-card p-3 flex">
+                            <div class="feature-icon vision-icon mr-3 flex-shrink-0">
+                                <i class="fas fa-sitemap"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-md font-semibold text-cyan-400">Conditional Workflow Automation</h4>
+                                <p class="text-xs text-gray-300 mt-1">Áp dụng ngưỡng tin cậy cho các hành động tự động, tạm dừng tại điểm quyết định quan trọng khi cần xác nhận từ con người</p>
+                            </div>
                         </div>
-                        <div class="mt-4 text-left">
-                            <p class="text-sm text-gray-400 mb-1">Ứng dụng tiêu biểu:</p>
-                            <ul class="text-xs text-gray-300 list-disc pl-5 space-y-1">
-                                <li>Route Optimization & Predictive ETA</li>
-                                <li>Predictive Maintenance</li>
-                                <li>Dynamic Demand Forecasting</li>
-                            </ul>
+                        
+                        <!-- Vision Feature 3 -->
+                        <div class="vision-card p-3 flex">
+                            <div class="feature-icon vision-icon mr-3 flex-shrink-0">
+                                <i class="fas fa-lightbulb"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-md font-semibold text-cyan-400">Contextual Proactive Insights</h4>
+                                <p class="text-xs text-gray-300 mt-1">Cung cấp thông tin chi tiết kèm ngữ cảnh và bằng chứng để giải thích "tại sao" đằng sau đề xuất, giảm thiểu sự khuếch đại thành kiến</p>
+                            </div>
+                        </div>
+                        
+                        <!-- Vision Feature 4 -->
+                        <div class="vision-card p-3 flex">
+                            <div class="feature-icon vision-icon mr-3 flex-shrink-0">
+                                <i class="fas fa-shield-alt"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-md font-semibold text-cyan-400">Governed Data Democratization</h4>
+                                <p class="text-xs text-gray-300 mt-1">Kiểm soát truy cập dữ liệu dựa trên vai trò (RBAC) đảm bảo người dùng chỉ truy vấn dữ liệu được phép, ngăn chặn rò rỉ thông tin nhạy cảm</p>
+                            </div>
                         </div>
                     </div>
+                </div>
+                
+                <!-- Decentralized Multi-Agent Architecture Section -->
+                <div class="mt-5">
+                    <h2 class="text-xl font-semibold text-yellow-400 mb-3 flex items-center">Kiến trúc multi AI Agent phi tập trung, hướng sự kiện</h2>
                     
-                    <!-- Level 3 - TRANSFORM -->
-                    <div class="framework-level p-6 text-center">
-                        <div class="level-icon transform-icon">
-                            <i class="fas fa-brain text-3xl"></i>
+                    <div class="flex space-x-5">
+                        <!-- Left: Architecture Diagram -->
+                        <div class="w-1/2 arch-card p-4 relative" style="height: 240px;">
+                            <!-- Diagram connections -->
+                            <div class="diagram-connection" style="top: 110px; left: 80px; width: 80px; height: 1px;"></div>
+                            <div class="diagram-connection" style="top: 110px; right: 80px; width: 80px; height: 1px;"></div>
+                            <div class="diagram-connection" style="top: 170px; left: 140px; width: 1px; height: 60px;"></div>
+                            <div class="diagram-connection" style="top: 170px; right: 140px; width: 1px; height: 60px;"></div>
+                            
+                            <!-- Event Bus -->
+                            <div class="absolute top-14 left-1/2 transform -translate-x-1/2 bg-yellow-900 bg-opacity-30 rounded-lg p-2 border border-yellow-700 text-center" style="width: 240px;">
+                                <p class="text-yellow-400 font-semibold text-sm">Event Bus (Apache Kafka)</p>
+                                <p class="text-xs text-gray-300">Publish-Subscribe Communication</p>
+                            </div>
+                            
+                            <!-- Agent 1 -->
+                            <div class="absolute top-4 left-4 bg-blue-900 bg-opacity-30 rounded-lg p-2 text-center" style="width: 100px;">
+                                <i class="fas fa-cogs text-cyan-400 mb-1"></i>
+                                <p class="text-xs text-white">Order Agent</p>
+                            </div>
+                            
+                            <!-- Agent 2 -->
+                            <div class="absolute top-4 right-4 bg-blue-900 bg-opacity-30 rounded-lg p-2 text-center" style="width: 100px;">
+                                <i class="fas fa-truck text-cyan-400 mb-1"></i>
+                                <p class="text-xs text-white">Transport Agent</p>
+                            </div>
+                            
+                            <!-- Agent 3 -->
+                            <div class="absolute bottom-4 left-1/4 bg-blue-900 bg-opacity-30 rounded-lg p-2 text-center" style="width: 100px;">
+                                <i class="fas fa-warehouse text-cyan-400 mb-1"></i>
+                                <p class="text-xs text-white">Warehouse Agent</p>
+                            </div>
+                            
+                            <!-- Agent 4 -->
+                            <div class="absolute bottom-4 right-1/4 bg-blue-900 bg-opacity-30 rounded-lg p-2 text-center" style="width: 100px;">
+                                <i class="fas fa-calculator text-cyan-400 mb-1"></i>
+                                <p class="text-xs text-white">Pricing Agent</p>
+                            </div>
+                            
+                            <div class="absolute bottom-2 left-1/2 transform -translate-x-1/2 text-xs text-gray-400">
+                                "Smart endpoints, dumb pipes"
+                            </div>
                         </div>
-                        <h3 class="text-xl font-bold text-green-400 mb-3">TRANSFORM</h3>
-                        <h4 class="text-lg font-medium text-white mb-3">Tự chủ & đổi mới chiến lược</h4>
-                        <p class="text-sm text-gray-300 mb-4">Tự chủ hoàn toàn, tối ưu toàn diện và tạo mô hình kinh doanh mới với hệ thống AI cao cấp có khả năng tự phục hồi.</p>
-                        <div class="price-tag text-green-400">
-                            $400,000 - $1,000,000+
+                        
+                        <!-- Right: Benefits & Technologies -->
+                        <div class="w-1/2 space-y-4">
+                            <div class="arch-card p-4">
+                                <h4 class="text-md font-semibold text-yellow-400 mb-2">Event-Driven Communication</h4>
+                                
+                                <div class="flex flex-wrap mb-2">
+                                    <span class="tech-tag">Apache Kafka</span>
+                                    <span class="tech-tag">Asynchronous</span>
+                                    <span class="tech-tag">Publish-Subscribe</span>
+                                </div>
+                                
+                                <p class="text-xs text-gray-300">Thay vì các AI Agent gọi trực tiếp, chúng giao tiếp không đồng bộ qua bus sự kiện, đảm bảo kiến trúc linh hoạt và khả năng mở rộng.</p>
+                            </div>
+                            
+                            <div class="highlight-box p-3">
+                                <h4 class="text-md font-semibold text-cyan-400 mb-1">Lợi ích chiến lược</h4>
+                                
+                                <ul class="space-y-2">
+                                    <li class="benefit-item text-sm text-gray-300">
+                                        <span class="font-medium text-white">Decoupling:</span> AI Agent hoạt động độc lập, dễ dàng thêm/xóa/sửa mà không ảnh hưởng đến hệ thống
+                                    </li>
+                                    <li class="benefit-item text-sm text-gray-300">
+                                        <span class="font-medium text-white">Scalability:</span> Nhân bản AI Agent cần thiết để xử lý tải trọng song song, phân phối công việc tự động
+                                    </li>
+                                    <li class="benefit-item text-sm text-gray-300">
+                                        <span class="font-medium text-white">Resilience:</span> Lỗi tại một AI Agent không gây sụp đổ hệ thống, sự kiện có thể được xử lý lại
+                                    </li>
+                                </ul>
+                            </div>
                         </div>
-                        <div class="mt-4 text-left">
-                            <p class="text-sm text-gray-400 mb-1">Ứng dụng tiêu biểu:</p>
-                            <ul class="text-xs text-gray-300 list-disc pl-5 space-y-1">
-                                <li>Autonomous Inventory & Supply Chain</li>
-                                <li>Autonomous Fleet Management</li>
-                                <li>Supply Chain Digital Twin</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="flex items-center mt-4 justify-center">
-                    <div class="h-1 bg-gradient-to-r from-cyan-400 via-yellow-400 to-green-400 w-2/3 rounded"></div>
-                </div>
-                
-                <div class="flex justify-center mt-4">
-                    <div class="highlight-box p-4 w-3/4 text-center">
-                        <h4 class="text-lg font-semibold text-cyan-400 mb-2">Phát triển theo lộ trình</h4>
-                        <p class="text-gray-300">Smartlog AI đồng hành cùng doanh nghiệp từng bước trong hành trình chuyển đổi số, từ tối ưu hóa hiệu quả cơ bản đến hệ thống logistics tự động hoàn toàn.</p>
                     </div>
                 </div>
             </div>
             
             <!-- Footer Section -->
-            <div class="footer-section flex justify-between items-end mt-3">
-                <div class="company-info text-sm text-gray-300">
+            <div class="footer-section flex justify-between items-end mt-4">
+                <div class="company-info text-sm text-gray-400">
                     <p>© 2025 Smartlog AI</p>
                 </div>
-                <div class="slide-info text-sm text-gray-300">
-                    <p>9 / 19</p>
+                <div class="slide-info text-sm text-gray-400">
+                    <p>8 / 19</p>
                 </div>
             </div>
         </div>
     </div>
+    <iframe id="_pericles_content_iframe" style="position: absolute; top: -99px; left: 0px; width: 50px; height: 26px; background: transparent; overflow: visible; margin-top: -30px; transition: top 2s ease-in-out; z-index: 2147483647; border: none; padding: 0px;"></iframe>
     <script src="script.js"></script>
 </body>
 </html>

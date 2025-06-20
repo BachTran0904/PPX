@@ -1,12 +1,11 @@
 <!DOCTYPE html>
-<html lang="vi">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sẵn sàng Chuyển đổi Số với AI</title>
+    <title>AI & Jobs Quote</title>
+    <meta name="viewport" content="width=1280, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
     <style>
         body {
             font-family: 'Montserrat', sans-serif;
@@ -17,22 +16,13 @@
         .slide-container {
             width: 1280px;
             min-height: 720px;
-            position: relative;
             background-color: #0a2540;
             color: white;
-        }
-        .accent-bar {
-            height: 6px;
-            width: 60px;
-            background-color: #00c2b6;
-        }
-        .highlight-box {
-            background-color: rgba(0, 194, 182, 0.15);
-            border-left: 4px solid #00c2b6;
-        }
-        .content-area {
             position: relative;
-            z-index: 10;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
         }
         .bg-pattern {
             position: absolute;
@@ -40,147 +30,102 @@
             right: 0;
             width: 500px;
             height: 500px;
-            opacity: 0.05;
+            opacity: 0.06;
             z-index: 1;
         }
-        .journey-step {
+        .content-area {
             position: relative;
-            transition: transform 0.2s;
-        }
-        .journey-step:hover {
-            transform: translateY(-5px);
-        }
-        .step-icon {
-            width: 70px;
-            height: 70px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border-radius: 50%;
-            color: #fff;
-            font-size: 1.8rem;
-            margin: 0 auto 1rem;
-        }
-        .journey-connector {
-            position: absolute;
-            height: 3px;
-            background-color: rgba(0, 194, 182, 0.5);
-            top: 35px;
+            z-index: 10;
+            height: 100%;
             width: 100%;
-            left: -50%;
-            z-index: -1;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+            padding: 60px 60px 0 60px;
+            min-height: 720px;
         }
-        .cta-button {
-            background-color: #00c2b6;
-            transition: background-color 0.3s;
+        .the-quote {
+            font-size: 2rem;
+            line-height: 1.25;
+            font-weight: 600;
+            text-align: center;
+            background: rgba(0,194,182,0.14);
+            border-left: 6px solid #00c2b6;
+            border-radius: 14px;
+            color: #fff;
+            margin-bottom: 30px;
+            padding: 30px 36px 30px 40px;
+            box-shadow: 0 4px 28px rgba(0,0,0,0.12);
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+            z-index: 2;
         }
-        .cta-button:hover {
-            background-color: #00a59a;
+        .bottom-image-area {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: flex-end;
+            padding-bottom: 18px;
+            margin-top: auto;
+        }
+        .nvidia-img {
+            border-radius: 18px;
+            box-shadow: 0 8px 38px rgba(0,0,0,0.24);
+            width: 765px;          /* 90% of 850px */
+            max-width: 86.5vw;     /* 90% of 96vw */
+            height: auto;
+            background: #fff;
+            border: 4px solid #00c2b6;
+            z-index: 2;
+            transition: width 0.2s;
+        }
+        .slide-footer {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            padding: 24px 48px;
+            font-size: 1rem;
+            color: #bcd0e2;
+            z-index: 3;
+            pointer-events: none;
         }
     </style>
 </head>
 <body>
-    <div class="slide-container flex flex-col">
+    <div class="slide-container">
         <!-- Background pattern -->
         <div class="bg-pattern">
             <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
                 <path fill="#FFFFFF" d="M42.9,-68.5C55.9,-61.5,67.2,-50.9,75.1,-37.6C83,-24.3,87.5,-8.3,85.8,6.8C84.1,21.9,76.3,36,66.4,48.6C56.5,61.2,44.3,72.3,30.2,77.3C16,82.3,0,81.2,-16.2,78C-32.5,74.8,-49,69.6,-60.5,59C-72.1,48.3,-78.7,32.3,-79,16.4C-79.4,0.5,-73.6,-15.2,-65.2,-28.1C-56.9,-40.9,-46,-50.9,-34.1,-58.6C-22.2,-66.2,-9.2,-71.6,3.3,-76.7C15.7,-81.8,29.9,-75.5,42.9,-68.5Z" transform="translate(100 100)" />
             </svg>
         </div>
-        
-        <div class="content-area flex flex-col justify-between p-10 h-full">
-            <!-- Header Section -->
-            <div class="header-section mb-6">
-                <div class="accent-bar mb-3"></div>
-                <h1 class="text-3xl font-bold mb-2">Sẵn sàng Chuyển đổi Số với AI?</h1>
-                <p class="text-lg text-gray-300">Bắt đầu hành trình chuyển đổi số với Hệ sinh thái AI Smartlog</p>
+
+        <div class="content-area">
+            <!-- Quote at the top -->
+            <div class="the-quote">
+                "You're not gonna lose your job to AI<br>
+                but to someone who uses it." - Jensen Huang, CEO of Nvidia
             </div>
-            
-            <!-- Main Content Section -->
-            <div class="main-content">
-                <!-- Transformation Journey -->
-                <div class="flex justify-between items-start mb-10">
-                    <!-- Step 1: RUN -->
-                    <div class="journey-step w-1/3 px-4 text-center">
-                        <div class="step-icon bg-blue-600">
-                            <i class="fas fa-running"></i>
-                        </div>
-                        <h3 class="text-xl font-bold mb-2 text-cyan-400">RUN</h3>
-                        <p class="text-lg font-medium mb-2">Tối ưu hóa cơ bản</p>
-                        <p class="text-sm text-gray-300">Tự động hóa các tác vụ lặp lại, cải thiện hiệu quả vận hành với chi phí từ $25K - $400K</p>
-                        <div class="mt-3 flex justify-center">
-                            <span class="px-3 py-1 bg-blue-900 text-xs rounded-full">3-6 tháng triển khai</span>
-                        </div>
-                    </div>
-                    
-                    <!-- Step 2: GROW -->
-                    <div class="journey-step w-1/3 px-4 text-center relative">
-                        <div class="journey-connector"></div>
-                        <div class="step-icon bg-green-600">
-                            <i class="fas fa-chart-line"></i>
-                        </div>
-                        <h3 class="text-xl font-bold mb-2 text-cyan-400">GROW</h3>
-                        <p class="text-lg font-medium mb-2">Nâng cao quyết định</p>
-                        <p class="text-sm text-gray-300">Tích hợp AI vào quy trình cốt lõi, hỗ trợ ra quyết định với chi phí từ $50K - $400K</p>
-                        <div class="mt-3 flex justify-center">
-                            <span class="px-3 py-1 bg-blue-900 text-xs rounded-full">6-12 tháng triển khai</span>
-                        </div>
-                    </div>
-                    
-                    <!-- Step 3: TRANSFORM -->
-                    <div class="journey-step w-1/3 px-4 text-center relative">
-                        <div class="journey-connector"></div>
-                        <div class="step-icon bg-purple-600">
-                            <i class="fas fa-rocket"></i>
-                        </div>
-                        <h3 class="text-xl font-bold mb-2 text-cyan-400">TRANSFORM</h3>
-                        <p class="text-lg font-medium mb-2">Tự chủ toàn diện</p>
-                        <p class="text-sm text-gray-300">Tự chủ hoàn toàn, tạo mô hình kinh doanh đột phá với chi phí từ $400K - $1M+</p>
-                        <div class="mt-3 flex justify-center">
-                            <span class="px-3 py-1 bg-blue-900 text-xs rounded-full">12-24 tháng triển khai</span>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- ROI & Benefits Overview -->
-                <div class="highlight-box p-5 mb-6">
-                    <div class="flex justify-between items-center">
-                        <div class="flex items-center space-x-3">
-                            <i class="fas fa-chart-pie text-2xl text-cyan-400"></i>
-                            <div>
-                                <h3 class="text-xl font-semibold text-white">ROI trung bình</h3>
-                                <p class="text-lg text-yellow-400">200-400% trong 2-3 năm đầu</p>
-                            </div>
-                        </div>
-                        <div class="flex items-center space-x-3">
-                            <i class="fas fa-trophy text-2xl text-cyan-400"></i>
-                            <div>
-                                <h3 class="text-xl font-semibold text-white">Lợi thế cạnh tranh</h3>
-                                <p class="text-lg text-yellow-400">Dẫn đầu với công nghệ AI tiên tiến</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Call to Action -->
-                <div class="text-center py-5">
-                    <h2 class="text-2xl font-bold mb-4">Chúng tôi đồng hành cùng bạn</h2>
-                    <p class="text-lg text-gray-300 mb-6 mx-auto w-3/4">Từ những bước đầu tối ưu đến chuyển đổi toàn diện, Smartlog AI là đối tác tin cậy cho mọi giai đoạn phát triển</p>
-                    <button class="cta-button text-lg font-bold py-3 px-8 rounded-lg">
-                        Bắt đầu hành trình chuyển đổi ngay
-                    </button>
-                </div>
+
+            <!-- Image at the bottom -->
+            <div class="bottom-image-area">
+                <img 
+                    src="image/TheGioiMayChu-Blog-Jensen-Huang-nvidia.jpg" 
+                    alt="Nvidia CEO and logo" 
+                    class="nvidia-img"
+                >
             </div>
-            
-            <!-- Footer Section -->
-            <div class="footer-section flex justify-between items-end mt-6">
-                <div class="company-info text-sm text-gray-300">
-                    <p>© 2025 Smartlog AI</p>
-                </div>
-                <div class="slide-info text-sm text-gray-300">
-                    <p>18 / 19</p>
-                </div>
-            </div>
+        </div>
+
+        <div class="slide-footer">
+            <span>© 2025 Smartlog AI</span>
+            <span>18 / 18</span>
         </div>
     </div>
     <script src="script.js"></script>
