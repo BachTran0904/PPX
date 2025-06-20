@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="vi">
-<head>
+    <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Thách thức hiện tại của ngành Logistics</title>
+    <title>Nghịch lý trong ngành Logistics - Sân chơi phức tạp</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&amp;display=swap">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
     <style>
         body {
@@ -43,23 +43,20 @@
             opacity: 0.05;
             z-index: 1;
         }
-        .challenge-card {
+        .paradox-card {
             background-color: rgba(255, 255, 255, 0.05);
             border-radius: 8px;
             transition: all 0.3s ease;
             border-left: 3px solid transparent;
             height: 100%;
+            position: relative;
+            overflow: hidden;
         }
-        .challenge-card:hover {
+        .paradox-card:hover {
             border-left-color: #00c2b6;
             transform: translateX(5px);
         }
-        .card-speed { border-left-color: #00c2b6; }
-        .card-cost { border-left-color: #ffc107; }
-        .card-risk { border-left-color: #ff6b6b; }
-        .card-quality { border-left-color: #4dabf7; }
-        
-        .challenge-icon {
+        .paradox-icon {
             width: 50px;
             height: 50px;
             display: flex;
@@ -67,111 +64,293 @@
             justify-content: center;
             border-radius: 50%;
         }
-        .icon-speed { background-color: rgba(0, 194, 182, 0.2); color: #00c2b6; }
-        .icon-cost { background-color: rgba(255, 193, 7, 0.2); color: #ffc107; }
-        .icon-risk { background-color: rgba(255, 107, 107, 0.2); color: #ff6b6b; }
-        .icon-quality { background-color: rgba(77, 171, 247, 0.2); color: #4dabf7; }
+        .vs-badge {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            width: 26px;
+            height: 26px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 12px;
+            color: #ffc107;
+        }
+        
+        .card-growth { border-left-color: #00c2b6; }
+        .card-integration { border-left-color: #ffc107; }
+        .card-investment { border-left-color: #ff6b6b; }
+        .card-fragmentation { border-left-color: #4dabf7; }
+        .card-workforce { border-left-color: #9775fa; }
+        
+        .icon-growth { background-color: rgba(0, 194, 182, 0.2); color: #00c2b6; }
+        .icon-integration { background-color: rgba(255, 193, 7, 0.2); color: #ffc107; }
+        .icon-investment { background-color: rgba(255, 107, 107, 0.2); color: #ff6b6b; }
+        .icon-fragmentation { background-color: rgba(77, 171, 247, 0.2); color: #4dabf7; }
+        .icon-workforce { background-color: rgba(151, 117, 250, 0.2); color: #9775fa; }
+        
+        .metric-badge {
+            display: inline-block;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-weight: 600;
+            font-size: 0.8rem;
+            margin-top: 5px;
+        }
     </style>
-</head>
+<style>._pericles_action_prev,
+._pericles_action_next,
+._pericles_action_play,
+._pericles_action_stop,
+._pericles_action_pause {
+  cursor: pointer;
+  font-size: 19px;
+}
+
+._pericles_action_prev:hover,
+._pericles_action_next:hover,
+._pericles_action_play:hover,
+._pericles_action_stop:hover,
+._pericles_action_pause:hover {
+  font-size: 20px;
+}
+
+._pericles_action_prev:active,
+._pericles_action_next:active,
+._pericles_action_play:active,
+._pericles_action_stop:active,
+._pericles_action_pause:active {
+  font-size: 19px;
+}
+
+img._pericles_action_icon {
+  display: inline-block !important;
+  width: 24px !important;
+  height: 24px !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  vertical-align: top !important;
+  opacity: 0.9 !important;
+}
+
+img._pericles_action_icon:hover {
+  opacity: 1 !important;
+}
+
+ps-section,
+ps-word {
+  display: inline;
+  margin: 0;
+  padding: 0;
+}
+
+ps-word[data-audio-index]:hover {
+  background: #ccc;
+  cursor: crosshair;
+}
+
+ps-section {
+  position: relative;
+  cursor: pointer;
+}
+
+ps-section:hover {
+  background: var(--pericles-section-background);
+}
+
+._pericles_action_container {
+  border-radius: 4px;
+  width: 50px;
+  /* width: 74px; */
+  height: 26px;
+  /* background: linear-gradient(180deg, #ccc, transparent); */
+  background: #eee;
+  line-height: 32px;
+  transition: opacity 0.55s ease-in-out;
+  -moz-transition: opacity 0.55s ease-in-out;
+  -webkit-transition: opacity 0.55s ease-in-out;
+}
+
+._pericles_inspector {
+  border: 1px solid #000;
+  background-color: rgba(102, 136, 253, 0.2) !important;
+  color: #000 !important;
+  /* opacity: 0.6; */
+}
+
+@keyframes _periclesFadeOut {
+  0% {
+    background: #ccc;
+    color: #000;
+  }
+
+  100% {
+    background: transparent;
+    color: inherit;
+  }
+}
+._pericles_word_tracker_style_fade,
+._pericles_prev_word_tracker_style_fade {
+  border-radius: 2px;
+  text-shadow: none;
+}
+
+._pericles_prev_word_tracker_style_fade {
+  background: transparent;
+  animation: _periclesFadeOut 2s ease-out;
+  color: inherit;
+}
+
+rect._pericles_section_highlight_style_background {
+  fill: var(--pericles-section-background);
+  opacity: 0.4;
+}
+
+._pericles_section_highlight_style_background {
+  background: var(--pericles-section-background);
+}
+
+._pericles_section_highlight_style_border {
+  border: 1px solid var(--pericles-section-background);
+}
+
+rect._pericles_section_highlight_style_border {
+  stroke: var(--pericles-section-background);
+}
+
+._pericles_word_tracker_style_background {
+  background: var(--pericles-word-background);
+}
+
+._pericles_word_tracker_style_underline {
+  border-top: 1px solid var(--pericles-word-background);
+  border-bottom: 1px solid var(--pericles-word-background);
+}
+
+._pericles_word_tracker_style_fade {
+  background: var(--pericles-word-background);
+  color: #fff;
+}
+</style></head>
 <body>
     <div class="slide-container flex flex-col">
         <!-- Background pattern -->
         <div class="bg-pattern">
             <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-                <path fill="#FFFFFF" d="M42.9,-68.5C55.9,-61.5,67.2,-50.9,75.1,-37.6C83,-24.3,87.5,-8.3,85.8,6.8C84.1,21.9,76.3,36,66.4,48.6C56.5,61.2,44.3,72.3,30.2,77.3C16,82.3,0,81.2,-16.2,78C-32.5,74.8,-49,69.6,-60.5,59C-72.1,48.3,-78.7,32.3,-79,16.4C-79.4,0.5,-73.6,-15.2,-65.2,-28.1C-56.9,-40.9,-46,-50.9,-34.1,-58.6C-22.2,-66.2,-9.2,-71.6,3.3,-76.7C15.7,-81.8,29.9,-75.5,42.9,-68.5Z" transform="translate(100 100)" />
+                <path fill="#FFFFFF" d="M42.9,-68.5C55.9,-61.5,67.2,-50.9,75.1,-37.6C83,-24.3,87.5,-8.3,85.8,6.8C84.1,21.9,76.3,36,66.4,48.6C56.5,61.2,44.3,72.3,30.2,77.3C16,82.3,0,81.2,-16.2,78C-32.5,74.8,-49,69.6,-60.5,59C-72.1,48.3,-78.7,32.3,-79,16.4C-79.4,0.5,-73.6,-15.2,-65.2,-28.1C-56.9,-40.9,-46,-50.9,-34.1,-58.6C-22.2,-66.2,-9.2,-71.6,3.3,-76.7C15.7,-81.8,29.9,-75.5,42.9,-68.5Z" transform="translate(100 100)"></path>
             </svg>
         </div>
         
         <div class="content-area flex flex-col justify-between p-10 h-full">
             <!-- Header Section -->
-            <div class="header-section mb-6">
+            <div class="header-section mb-5">
                 <div class="accent-bar mb-3"></div>
-                <h1 class="text-3xl font-bold mb-2">Thách thức hiện tại của ngành Logistics</h1>
-                <p class="text-lg text-gray-300 w-3/4">Ngành logistics đang đối mặt với nhiều thách thức phức tạp trong bối cảnh toàn cầu hóa và số hóa</p>
+                <h1 class="text-3xl font-bold mb-2">Nghịch lý trong ngành Logistics - Đặt vấn đề</h1>
+                <p class="text-lg text-gray-300 w-3/4">Ngành logistics Việt Nam hiện đang vận hành trong một môi trường phức tạp, được định hình bởi những nghịch lý sâu sắc</p>
             </div>
             
-            <!-- Main Content Section -->
-            <div class="main-content grid grid-cols-2 gap-6 mb-6">
-                <!-- Challenge 1: Speed & Complexity -->
-                <div class="challenge-card card-speed p-5">
-                    <div class="flex items-start space-x-4">
-                        <div class="challenge-icon icon-speed text-2xl">
-                            <i class="fas fa-tachometer-alt"></i>
+            <!-- Main Content Section - Paradoxes -->
+            <div class="main-content grid grid-cols-3 gap-5 mb-5">
+                <!-- Paradox 1: Growth vs. Efficiency -->
+                <div class="paradox-card card-growth p-5">
+                    <div class="vs-badge">VS</div>
+                    <div class="flex items-start space-x-3">
+                        <div class="paradox-icon icon-growth text-2xl">
+                            <i class="fas fa-chart-bar"></i>
                         </div>
                         <div>
-                            <h3 class="text-xl font-semibold text-cyan-400 mb-2">Tốc độ & Độ phức tạp</h3>
-                            <p class="text-gray-300">Thị trường toàn cầu hóa, nhu cầu đa kênh và giao hàng nhanh đặt áp lực lớn lên khả năng điều phối và tính toán lộ trình</p>
-                            <div class="flex flex-wrap gap-2 mt-3">
-                                <span class="px-2 py-1 bg-cyan-900 bg-opacity-30 rounded text-xs text-cyan-400">Toàn cầu hóa</span>
-                                <span class="px-2 py-1 bg-cyan-900 bg-opacity-30 rounded text-xs text-cyan-400">Áp lực thời gian</span>
-                                <span class="px-2 py-1 bg-cyan-900 bg-opacity-30 rounded text-xs text-cyan-400">Đa kênh</span>
+                            <h3 class="text-xl font-semibold text-cyan-400 mb-2">Tăng trưởng vs Hiệu quả</h3>
+                            <p class="text-sm text-gray-300 mb-3">Ngành logistics tăng trưởng mạnh về quy mô, nhưng kém hiệu quả với chi phí cao và đóng góp thấp</p>
+                            <div class="flex justify-between mt-2">
+                                <span class="metric-badge bg-cyan-900 bg-opacity-40 text-cyan-400">Chi phí: 16-20% GDP</span>
+                                <span class="metric-badge bg-red-900 bg-opacity-40 text-red-400">Đóng góp: 4-5% GDP</span>
                             </div>
                         </div>
                     </div>
                 </div>
                 
-                <!-- Challenge 2: Rising Costs -->
-                <div class="challenge-card card-cost p-5">
-                    <div class="flex items-start space-x-4">
-                        <div class="challenge-icon icon-cost text-2xl">
-                            <i class="fas fa-chart-line"></i>
+                <!-- Paradox 2: Integration vs Barriers -->
+                <div class="paradox-card card-integration p-5">
+                    <div class="vs-badge">VS</div>
+                    <div class="flex items-start space-x-3">
+                        <div class="paradox-icon icon-integration text-2xl">
+                            <i class="fas fa-handshake"></i>
                         </div>
                         <div>
-                            <h3 class="text-xl font-semibold text-yellow-400 mb-2">Chi phí tăng cao</h3>
-                            <p class="text-gray-300">Giá nhiên liệu, nhân công và chi phí lưu kho leo thang, trong khi tỷ lệ sử dụng phương tiện và kho bãi chưa tối ưu</p>
-                            <div class="flex flex-wrap gap-2 mt-3">
-                                <span class="px-2 py-1 bg-yellow-900 bg-opacity-30 rounded text-xs text-yellow-400">Nhiên liệu</span>
-                                <span class="px-2 py-1 bg-yellow-900 bg-opacity-30 rounded text-xs text-yellow-400">Nhân công</span>
-                                <span class="px-2 py-1 bg-yellow-900 bg-opacity-30 rounded text-xs text-yellow-400">Lưu kho</span>
+                            <h3 class="text-xl font-semibold text-yellow-400 mb-2">Hội nhập vs Rào cản</h3>
+                            <p class="text-sm text-gray-300 mb-3">FTA mở cơ hội thị trường nhưng dựng lên rào cản mới về ESG và tiêu chuẩn xanh</p>
+                            <div class="flex justify-between mt-2">
+                                <span class="metric-badge bg-yellow-900 bg-opacity-40 text-yellow-400">DN ngoại: 80% thị phần</span>
+                                <span class="metric-badge bg-yellow-900 bg-opacity-40 text-yellow-400">Rào cản kỹ thuật</span>
                             </div>
                         </div>
                     </div>
                 </div>
                 
-                <!-- Challenge 3: Risks & Volatility -->
-                <div class="challenge-card card-risk p-5">
-                    <div class="flex items-start space-x-4">
-                        <div class="challenge-icon icon-risk text-2xl">
-                            <i class="fas fa-exclamation-triangle"></i>
+                <!-- Paradox 3: Investment vs Connection -->
+                <div class="paradox-card card-investment p-5">
+                    <div class="vs-badge">VS</div>
+                    <div class="flex items-start space-x-3">
+                        <div class="paradox-icon icon-investment text-2xl">
+                            <i class="fas fa-building"></i>
                         </div>
                         <div>
-                            <h3 class="text-xl font-semibold text-red-400 mb-2">Rủi ro & Biến động</h3>
-                            <p class="text-gray-300">Thời tiết, gián đoạn chính trị, thay đổi quy định hải quan khiến dự báo và kế hoạch dễ bị sai lệch</p>
-                            <div class="flex flex-wrap gap-2 mt-3">
-                                <span class="px-2 py-1 bg-red-900 bg-opacity-30 rounded text-xs text-red-400">Thời tiết</span>
-                                <span class="px-2 py-1 bg-red-900 bg-opacity-30 rounded text-xs text-red-400">Chính trị</span>
-                                <span class="px-2 py-1 bg-red-900 bg-opacity-30 rounded text-xs text-red-400">Hải quan</span>
+                            <h3 class="text-xl font-semibold text-red-400 mb-2">Đầu tư vs Kết nối</h3>
+                            <p class="text-sm text-gray-300 mb-3">Đầu tư hạ tầng khổng lồ nhưng thiếu kết nối đồng bộ và hạ tầng "chặng cuối"</p>
+                            <div class="flex justify-between mt-2">
+                                <span class="metric-badge bg-red-900 bg-opacity-40 text-red-400">Sân bay Long Thành</span>
+                                <span class="metric-badge bg-red-900 bg-opacity-40 text-red-400">Kết nối vùng yếu</span>
                             </div>
                         </div>
                     </div>
                 </div>
                 
-                <!-- Challenge 4: Inconsistent Quality -->
-                <div class="challenge-card card-quality p-5">
-                    <div class="flex items-start space-x-4">
-                        <div class="challenge-icon icon-quality text-2xl">
-                            <i class="fas fa-tasks"></i>
+                <!-- Paradox 4: Fragmentation vs Polarization -->
+                <div class="paradox-card card-fragmentation p-5">
+                    <div class="vs-badge">VS</div>
+                    <div class="flex items-start space-x-3">
+                        <div class="paradox-icon icon-fragmentation text-2xl">
+                            <i class="fas fa-puzzle-piece"></i>
                         </div>
                         <div>
-                            <h3 class="text-xl font-semibold text-blue-400 mb-2">Chất lượng không đồng đều</h3>
-                            <p class="text-gray-300">Nhiều doanh nghiệp SMEs chưa có giải pháp tự động, vẫn xử lý thủ công dẫn đến trải nghiệm khách hàng không ổn định</p>
-                            <div class="flex flex-wrap gap-2 mt-3">
-                                <span class="px-2 py-1 bg-blue-900 bg-opacity-30 rounded text-xs text-blue-400">SMEs</span>
-                                <span class="px-2 py-1 bg-blue-900 bg-opacity-30 rounded text-xs text-blue-400">Xử lý thủ công</span>
-                                <span class="px-2 py-1 bg-blue-900 bg-opacity-30 rounded text-xs text-blue-400">CX không ổn định</span>
+                            <h3 class="text-xl font-semibold text-blue-400 mb-2">Phân mảnh vs Phân hóa</h3>
+                            <p class="text-sm text-gray-300 mb-3">Thị trường không chỉ manh mún mà phân hóa mạnh thành cấu trúc "hai tầng" (two-tier market)</p>
+                            <div class="flex flex-col mt-2">
+                                <span class="metric-badge bg-blue-900 bg-opacity-40 text-blue-400 mb-1">Tầng trên: Tập đoàn lớn &amp; startups</span>
+                                <span class="metric-badge bg-blue-900 bg-opacity-40 text-blue-400">Tầng dưới: DNVVN công nghệ lạc hậu</span>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            
-            <!-- Highlight box at bottom -->
-            <div class="highlight-box p-4 mb-4 max-w-3xl">
-                <div class="flex items-center space-x-3">
-                    <i class="fas fa-lightbulb text-yellow-400 text-xl"></i>
-                    <h4 class="text-lg font-semibold text-white">Cơ hội chuyển đổi số</h4>
+                
+                <!-- Paradox 5: Workforce vs Technology -->
+                <div class="paradox-card card-workforce p-5">
+                    <div class="vs-badge">VS</div>
+                    <div class="flex items-start space-x-3">
+                        <div class="paradox-icon icon-workforce text-2xl">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-semibold text-purple-400 mb-2">Nhân lực vs Công nghệ</h3>
+                            <p class="text-sm text-gray-300 mb-3">"Khoảng trống năng lực" nghiêm trọng trong các lĩnh vực chuyên sâu về công nghệ và kỹ thuật số</p>
+                            <div class="flex flex-col mt-2">
+                                <span class="metric-badge bg-purple-900 bg-opacity-40 text-purple-400">Thiếu 2 triệu lao động kỹ năng số 2030</span>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <p class="text-gray-300 mt-2">Những thách thức này tạo ra cơ hội lớn cho giải pháp AI logistics giúp tự động hóa quyết định, tối ưu chi phí và nâng cao trải nghiệm</p>
+                
+                <!-- Highlight box explaining the significance -->
+                <div class="highlight-box p-4">
+                    <div class="flex items-center space-x-3 mb-1">
+                        <i class="fas fa-lightbulb text-yellow-400 text-xl"></i>
+                        <h4 class="text-lg font-semibold text-white">Hiểu rõ nghịch lý</h4>
+                    </div>
+                    <p class="text-sm text-gray-300">Việc nhận diện và giải quyết các nghịch lý này là chìa khóa để xây dựng hệ sinh thái AI toàn diện, đáp ứng nhu cầu thực tế của ngành logistics Việt Nam</p>
+                </div>
             </div>
             
             <!-- Footer Section -->
@@ -180,11 +359,14 @@
                     <p>© 2025 Smartlog AI</p>
                 </div>
                 <div class="slide-info text-sm text-gray-300">
-                    <p>2 / 19</p>
+                    <p>2 / 20</p>
                 </div>
             </div>
         </div>
     </div>
+    
+    <iframe id="_pericles_content_iframe" style="position: absolute; top: -99px; left: 0px; width: 50px; height: 26px; background: transparent; overflow: visible; margin-top: -30px; transition: top 2s ease-in-out; z-index: 2147483647; border: none; padding: 0px;"></iframe>
     <script src="script.js"></script>
+
 </body>
 </html>

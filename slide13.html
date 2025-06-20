@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lộ trình Phát triển 2025-2029 - Giai đoạn 1-2</title>
+    <title>Cấp độ 2 - GROW: Nâng cao Quyết định & Tối ưu Quy trình</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
@@ -30,6 +30,14 @@
             background-color: rgba(0, 194, 182, 0.15);
             border-left: 4px solid #00c2b6;
         }
+        .problem-box {
+            background-color: rgba(239, 68, 68, 0.15);
+            border-left: 4px solid #ef4444;
+        }
+        .goals-box {
+            background-color: rgba(59, 130, 246, 0.15);
+            border-left: 4px solid #3b82f6;
+        }
         .content-area {
             position: relative;
             z-index: 10;
@@ -43,61 +51,78 @@
             opacity: 0.05;
             z-index: 1;
         }
-        .timeline-container {
-            position: relative;
-        }
-        .timeline {
-            position: absolute;
-            top: 50%;
-            left: 0;
-            width: 100%;
-            height: 4px;
-            background-color: rgba(0, 194, 182, 0.3);
-            transform: translateY(-50%);
-        }
-        .phase-card {
-            background-color: rgba(255, 255, 255, 0.05);
-            border: 1px solid rgba(0, 194, 182, 0.2);
-            border-radius: 8px;
-            transition: background-color 0.2s;
-        }
-        .phase-card:hover {
-            background-color: rgba(255, 255, 255, 0.08);
-        }
-        .phase-icon {
-            width: 48px;
-            height: 48px;
+        .feature-icon {
+            width: 60px;
+            height: 60px;
             display: flex;
             align-items: center;
             justify-content: center;
-            border-radius: 50%;
+            border-radius: 12px;
             background-color: rgba(0, 194, 182, 0.2);
             color: #00c2b6;
         }
-        .stat-block {
+        .agent-card {
             background-color: rgba(255, 255, 255, 0.05);
-            border-radius: 6px;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            height: 100%;
         }
-        .bullet-item {
-            display: flex;
-            align-items: flex-start;
-            margin-bottom: 8px;
+        .agent-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
         }
-        .bullet-dot {
-            width: 6px;
-            height: 6px;
-            background-color: #00c2b6;
-            border-radius: 50%;
-            margin-right: 10px;
-            margin-top: 6px;
-            flex-shrink: 0;
-        }
-        .metric-tag {
-            background-color: rgba(0, 194, 182, 0.2);
-            border-radius: 12px;
-            font-size: 12px;
-            padding: 2px 8px;
+        .level-badge {
+            background-color: rgba(246, 173, 85, 0.2);
+            color: #f6ad55;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            padding: 4px 12px;
             display: inline-block;
+            margin-bottom: 10px;
+        }
+        .stat-highlight {
+            color: #f6ad55;
+            font-weight: bold;
+        }
+        .price-tag {
+            background-color: rgba(0, 104, 74, 0.2);
+            color: #2dd4bf;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+        .network-image-container {
+            position: relative;
+            margin-bottom: 10px;
+            padding: 0;
+            border-radius: 8px;
+            overflow: hidden;
+            border: 1px solid rgba(0, 194, 182, 0.3);
+        }
+        .network-image {
+            width: 100%;
+            height: 160px;
+            object-fit: cover;
+        }
+        .image-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 8px;
+            background-color: rgba(10, 37, 64, 0.75);
+            backdrop-filter: blur(2px);
+        }
+        .project-card {
+            background-color: rgba(255, 255, 255, 0.08);
+            border-radius: 8px;
+            border-left: 4px solid #f59e0b;
+        }
+        .goal-item {
+            background-color: rgba(59, 130, 246, 0.1);
+            border-radius: 6px;
+            padding: 6px 10px;
         }
     </style>
 </head>
@@ -112,197 +137,199 @@
         
         <div class="content-area flex flex-col justify-between p-10 h-full">
             <!-- Header Section -->
-            <div class="header-section mb-6">
-                <div class="accent-bar mb-3"></div>
-                <h1 class="text-3xl font-bold mb-2">Lộ trình Phát triển 2025-2029</h1>
-                <p class="text-lg text-gray-300">Giai đoạn 1-2: Nền tảng & Mở rộng</p>
+            <div class="header-section mb-2">
+                <div class="accent-bar mb-2"></div>
+                <h1 class="text-3xl font-bold mb-1">Cấp độ 2 - GROW: Nâng cao Quyết định & Tối ưu Quy trình</h1>
+                <p class="text-lg text-gray-300 w-3/4">Tích hợp AI vào quy trình cốt lõi, hỗ trợ ra quyết định thông minh</p>
             </div>
             
+            <!-- Problem Statement Section -->
+            <div class="problem-box p-3 mb-3">
+                <div class="flex items-center">
+                    <div class="feature-icon text-xl mr-3">
+                        <i class="fas fa-exclamation-triangle"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-white font-semibold mb-1">Problem Level 2:</h3>
+                        <p class="text-gray-300">Quyết định tồn kho và lộ trình vận tải phụ thuộc vào dự báo và điều chỉnh linh hoạt, gây chi phí cao và service level thấp.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Business Goals Section -->
+            <div class="goals-box p-3 mb-3">
+                <h3 class="text-white font-semibold mb-2">Business Goals:</h3>
+                <div class="grid grid-cols-3 gap-3">
+                    <div class="goal-item flex items-center">
+                        <i class="fas fa-dollar-sign text-blue-400 mr-2"></i>
+                        <span class="text-sm">Giảm <span class="text-yellow-400 font-bold">10-20%</span> chi phí vận hành</span>
+                    </div>
+                    <div class="goal-item flex items-center">
+                        <i class="fas fa-check-circle text-blue-400 mr-2"></i>
+                        <span class="text-sm">Nâng service level lên <span class="text-yellow-400 font-bold">≥95%</span></span>
+                    </div>
+                    <div class="goal-item flex items-center">
+                        <i class="fas fa-coins text-blue-400 mr-2"></i>
+                        <span class="text-sm">Giảm <span class="text-yellow-400 font-bold">10-15%</span> vốn lưu động</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Network Image Section -->
+            <div class="network-image-container">
+                <img src="https://page1.genspark.site/v1/base64_upload/4520a1e73b8c87220a0b8f417b253785" alt="Logistics Network Connectivity" class="network-image">
+                <div class="image-overlay">
+                    <div class="flex items-center">
+                        <i class="fas fa-network-wired text-yellow-400 mr-2"></i>
+                        <p class="text-sm text-gray-100">Mạng lưới kết nối logistics với các node tối ưu tuyến đường, cho phép phân tích và dự đoán luồng vận chuyển thời gian thực</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Key Initiatives Section -->
+            <h3 class="text-white font-semibold mb-2">Key Initiatives:</h3>
             <!-- Main Content Section -->
-            <div class="main-content">
-                <!-- Timeline Visual -->
-                <div class="flex flex-row space-x-8 mb-6">
-                    <!-- Phase 1 -->
-                    <div class="w-1/2">
-                        <div class="phase-card p-6">
-                            <div class="flex items-center mb-4">
-                                <div class="phase-icon text-xl mr-4">
-                                    <i class="fas fa-seedling"></i>
-                                </div>
-                                <div>
-                                    <h3 class="text-xl font-semibold text-cyan-400">Giai đoạn 1: Nền tảng & Khám phá</h3>
-                                    <p class="text-sm font-medium">2025-2026</p>
-                                </div>
-                            </div>
-                            
-                            <div class="flex items-center justify-between mb-4">
-                                <div class="stat-block px-3 py-2 text-center">
-                                    <p class="text-sm text-gray-400">FTE tối ưu hóa</p>
-                                    <p class="text-xl font-bold text-yellow-400">5-10</p>
-                                    <p class="text-xs text-gray-400">người</p>
-                                </div>
-                                
-                                <div class="stat-block px-3 py-2 text-center">
-                                    <p class="text-sm text-gray-400">Số AI Agents</p>
-                                    <p class="text-xl font-bold text-yellow-400">3-5</p>
-                                    <p class="text-xs text-gray-400">agents</p>
-                                </div>
-                            </div>
-                            
-                            <div class="mb-4">
-                                <h4 class="text-white font-medium mb-2">Hoạt động chính:</h4>
-                                <div class="text-sm text-gray-300 space-y-2">
-                                    <div class="bullet-item">
-                                        <div class="bullet-dot"></div>
-                                        <span>Thành lập Ban Quản trị AI, đánh giá tác động (AIIA), làm sạch dữ liệu</span>
-                                    </div>
-                                    <div class="bullet-item">
-                                        <div class="bullet-dot"></div>
-                                        <span>PoC: Chatbot nội bộ (Năm 1); Agent dự đoán ETA & prototype giao diện (Năm 2)</span>
-                                    </div>
-                                    <div class="bullet-item">
-                                        <div class="bullet-dot"></div>
-                                        <span>Xây dựng hạ tầng dữ liệu và đội ngũ AI nền tảng</span>
-                                    </div>
-                                </div>
-                            </div>
-                            
-                            <div class="bg-blue-900 bg-opacity-20 p-3 rounded-lg">
-                                <h4 class="text-white font-medium mb-2">KPI nổi bật:</h4>
-                                <div class="grid grid-cols-3 gap-3">
-                                    <div class="text-center">
-                                        <p class="text-yellow-400 font-bold text-lg">2</p>
-                                        <p class="text-xs text-gray-300">PoC thành công</p>
-                                    </div>
-                                    <div class="text-center">
-                                        <p class="text-yellow-400 font-bold text-lg">40%</p>
-                                        <p class="text-xs text-gray-300">Chất lượng dữ liệu ↑</p>
-                                    </div>
-                                    <div class="text-center">
-                                        <p class="text-yellow-400 font-bold text-lg">80%</p>
-                                        <p class="text-xs text-gray-300">Độ chính xác ETA</p>
-                                    </div>
-                                </div>
+            <div class="main-content grid grid-cols-3 gap-4 mb-3">
+                <!-- Card 1 - Demand Forecasting & Inventory Buffering -->
+                <div class="agent-card p-4">
+                    <div class="flex justify-between items-center mb-2">
+                        <span class="level-badge">Cấp độ 2 - Grow</span>
+                    </div>
+                    
+                    <div class="flex items-center mb-2">
+                        <div class="feature-icon text-xl mr-3">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <h2 class="text-base font-semibold text-white">Demand Forecasting & Inventory Buffering</h2>
+                    </div>
+                    
+                    <div class="highlight-box p-2 mb-2">
+                        <p class="text-gray-300 text-xs">Thiết lập dự báo nhu cầu hàng tuần, tự động điều chỉnh tồn kho theo DDMRP</p>
+                    </div>
+                    
+                    <div class="mt-1 mb-1 text-xs font-medium text-cyan-400">Công nghệ:</div>
+                    <div class="flex flex-wrap gap-1 mb-2">
+                        <span class="px-2 py-0.5 bg-blue-900 bg-opacity-30 rounded text-xs text-gray-300">Deep Learning</span>
+                        <span class="px-2 py-0.5 bg-blue-900 bg-opacity-30 rounded text-xs text-gray-300">Multi-source Data</span>
+                    </div>
+                </div>
+                
+                <!-- Card 2 - Route Optimization & Dynamic Planning -->
+                <div class="agent-card p-4">
+                    <div class="flex justify-between items-center mb-2">
+                        <span class="level-badge">Cấp độ 2 - Grow</span>
+                    </div>
+                    
+                    <div class="flex items-center mb-2">
+                        <div class="feature-icon text-xl mr-3">
+                            <i class="fas fa-route"></i>
+                        </div>
+                        <h2 class="text-base font-semibold text-white">Route Optimization & Dynamic Planning</h2>
+                    </div>
+                    
+                    <div class="highlight-box p-2 mb-2">
+                        <p class="text-gray-300 text-xs">Thiết lập lộ trình tối ưu và cơ chế tái lập tự động khi có biến động</p>
+                    </div>
+                    
+                    <div class="mt-1 mb-1 text-xs font-medium text-cyan-400">Công nghệ:</div>
+                    <div class="flex flex-wrap gap-1 mb-2">
+                        <span class="px-2 py-0.5 bg-blue-900 bg-opacity-30 rounded text-xs text-gray-300">Reinforcement Learning</span>
+                        <span class="px-2 py-0.5 bg-blue-900 bg-opacity-30 rounded text-xs text-gray-300">Real-time Traffic Data</span>
+                    </div>
+                </div>
+                
+                <!-- Card 3 - Predictive Maintenance Pilot -->
+                <div class="agent-card p-4">
+                    <div class="flex justify-between items-center mb-2">
+                        <span class="level-badge">Cấp độ 2 - Grow</span>
+                    </div>
+                    
+                    <div class="flex items-center mb-2">
+                        <div class="feature-icon text-xl mr-3">
+                            <i class="fas fa-tools"></i>
+                        </div>
+                        <h2 class="text-base font-semibold text-white">Predictive Maintenance Pilot</h2>
+                    </div>
+                    
+                    <div class="highlight-box p-2 mb-2">
+                        <p class="text-gray-300 text-xs">Xây kế hoạch bảo trì phòng ngừa cho xe & thiết bị kho</p>
+                    </div>
+                    
+                    <div class="mt-1 mb-1 text-xs font-medium text-cyan-400">Công nghệ:</div>
+                    <div class="flex flex-wrap gap-1 mb-2">
+                        <span class="px-2 py-0.5 bg-blue-900 bg-opacity-30 rounded text-xs text-gray-300">IoT Sensors</span>
+                        <span class="px-2 py-0.5 bg-blue-900 bg-opacity-30 rounded text-xs text-gray-300">Time Series Analysis</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Project Example Section -->
+            <div class="project-card p-4">
+                <h3 class="text-lg font-semibold text-yellow-500 mb-2 flex items-center">
+                    <i class="fas fa-star mr-2"></i> Ví dụ dự án tiêu biểu: SmartForecast & Buffering
+                </h3>
+                
+                <div class="flex">
+                    <div class="w-2/3 pr-4">
+                        <div class="flex items-center mb-2">
+                            <div class="w-1/4 text-right pr-3 text-sm text-gray-400">Mục tiêu:</div>
+                            <div class="w-3/4 text-sm text-white">Pilot tại 20 kho, giảm stock-out từ 20% xuống 5% và tồn kho dư từ 12% xuống 5%</div>
+                        </div>
+                        
+                        <div class="flex items-center mb-2">
+                            <div class="w-1/4 text-right pr-3 text-sm text-gray-400">Kết quả kỳ vọng:</div>
+                            <div class="w-3/4">
+                                <ul class="space-y-1">
+                                    <li class="flex items-center">
+                                        <div class="mr-2 text-yellow-500">
+                                            <i class="fas fa-check-circle"></i>
+                                        </div>
+                                        <div>
+                                            <p class="text-sm text-white">Tiết kiệm <span class="stat-highlight">>20 triệu USD</span> một năm</p>
+                                        </div>
+                                    </li>
+                                    <li class="flex items-center">
+                                        <div class="mr-2 text-yellow-500">
+                                            <i class="fas fa-check-circle"></i>
+                                        </div>
+                                        <div>
+                                            <p class="text-sm text-white">Vốn lưu động giảm <span class="stat-highlight">10-15%</span></p>
+                                        </div>
+                                    </li>
+                                    <li class="flex items-center">
+                                        <div class="mr-2 text-yellow-500">
+                                            <i class="fas fa-check-circle"></i>
+                                        </div>
+                                        <div>
+                                            <p class="text-sm text-white">Service level nâng lên <span class="stat-highlight">≥95%</span></p>
+                                        </div>
+                                    </li>
+                                </ul>
                             </div>
                         </div>
                     </div>
                     
-                    <!-- Phase 2 -->
-                    <div class="w-1/2">
-                        <div class="phase-card p-6">
-                            <div class="flex items-center mb-4">
-                                <div class="phase-icon text-xl mr-4">
-                                    <i class="fas fa-project-diagram"></i>
-                                </div>
-                                <div>
-                                    <h3 class="text-xl font-semibold text-cyan-400">Giai đoạn 2: Mở rộng & Tích hợp</h3>
-                                    <p class="text-sm font-medium">2027-2029</p>
-                                </div>
-                            </div>
-                            
-                            <div class="flex items-center justify-between mb-4">
-                                <div class="stat-block px-3 py-2 text-center">
-                                    <p class="text-sm text-gray-400">FTE tối ưu hóa</p>
-                                    <p class="text-xl font-bold text-yellow-400">15-20</p>
-                                    <p class="text-xs text-gray-400">người</p>
-                                </div>
-                                
-                                <div class="stat-block px-3 py-2 text-center">
-                                    <p class="text-sm text-gray-400">Số AI Agents</p>
-                                    <p class="text-xl font-bold text-yellow-400">10-15</p>
-                                    <p class="text-xs text-gray-400">agents</p>
-                                </div>
-                            </div>
-                            
-                            <div class="mb-4">
-                                <h4 class="text-white font-medium mb-2">Hoạt động chính:</h4>
-                                <div class="text-sm text-gray-300 space-y-2">
-                                    <div class="bullet-item">
-                                        <div class="bullet-dot"></div>
-                                        <span>Xây dựng cụm AI Agent: CS, Vận tải, Kho hàng</span>
-                                    </div>
-                                    <div class="bullet-item">
-                                        <div class="bullet-dot"></div>
-                                        <span>Ra mắt Smartlog AI v1.0 cho khách hàng pilot</span>
-                                    </div>
-                                    <div class="bullet-item">
-                                        <div class="bullet-dot"></div>
-                                        <span>Thiết lập MLOps: CI/CD, monitoring, XAI</span>
-                                    </div>
-                                </div>
-                            </div>
-                            
-                            <div class="bg-blue-900 bg-opacity-20 p-3 rounded-lg">
-                                <h4 class="text-white font-medium mb-2">KPI nổi bật:</h4>
-                                <div class="grid grid-cols-3 gap-3">
-                                    <div class="text-center">
-                                        <p class="text-yellow-400 font-bold text-lg">20%</p>
-                                        <p class="text-xs text-gray-300">Tương tác tự động</p>
-                                    </div>
-                                    <div class="text-center">
-                                        <p class="text-yellow-400 font-bold text-lg">10%</p>
-                                        <p class="text-xs text-gray-300">Giảm OPEX</p>
-                                    </div>
-                                    <div class="text-center">
-                                        <p class="text-yellow-400 font-bold text-lg">≥</p>
-                                        <p class="text-xs text-gray-300">NPS AI ≥ mục tiêu</p>
-                                    </div>
-                                </div>
-                            </div>
+                    <div class="w-1/3 flex flex-col items-center justify-center">
+                        <div class="text-center mb-2">
+                            <div class="text-3xl font-bold text-yellow-400">20→5%</div>
+                            <div class="text-xs text-gray-300">Stock-out</div>
                         </div>
-                    </div>
-                </div>
-                
-                <!-- Agent Distribution Section -->
-                <div class="flex justify-between mb-6">
-                    <div class="w-1/2 pr-4">
-                        <h4 class="text-cyan-400 font-medium mb-3">Phân bổ Agents Giai đoạn 1:</h4>
-                        <div class="flex flex-wrap gap-2">
-                            <span class="metric-tag"><i class="fas fa-comment-dots mr-1"></i> Chatbot nội bộ</span>
-                            <span class="metric-tag"><i class="fas fa-clock mr-1"></i> Agent ETA</span>
-                            <span class="metric-tag"><i class="fas fa-microphone mr-1"></i> Voice prototype</span>
-                            <span class="metric-tag"><i class="fas fa-file-alt mr-1"></i> Báo cáo tự động</span>
-                        </div>
-                    </div>
-                    
-                    <div class="w-1/2 pl-4">
-                        <h4 class="text-cyan-400 font-medium mb-3">Phân bổ Agents Giai đoạn 2:</h4>
-                        <div class="flex flex-wrap gap-2">
-                            <span class="metric-tag"><i class="fas fa-headset mr-1"></i> CS (5-7)</span>
-                            <span class="metric-tag"><i class="fas fa-truck mr-1"></i> Vận tải (3-5)</span>
-                            <span class="metric-tag"><i class="fas fa-warehouse mr-1"></i> Kho (2-3)</span>
-                            <span class="metric-tag"><i class="fas fa-cogs mr-1"></i> MLOps</span>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Summary Box -->
-                <div class="highlight-box p-4 mt-4">
-                    <h3 class="text-lg font-semibold text-cyan-400 mb-2">Mục tiêu cuối Giai đoạn 2 (2029)</h3>
-                    <div class="flex justify-between">
-                        <div class="flex items-center space-x-2">
-                            <i class="fas fa-check-circle text-cyan-400"></i>
-                            <span>Ra mắt Smartlog AI v1.0</span>
-                        </div>
-                        <div class="flex items-center space-x-2">
-                            <i class="fas fa-check-circle text-cyan-400"></i>
-                            <span>10-15 AI Agents hoạt động</span>
-                        </div>
-                        <div class="flex items-center space-x-2">
-                            <i class="fas fa-check-circle text-cyan-400"></i>
-                            <span>20% tương tác qua AI</span>
+                        
+                        <div class="text-center">
+                            <div class="text-3xl font-bold text-yellow-400">12→5%</div>
+                            <div class="text-xs text-gray-300">Tồn kho dư thừa</div>
                         </div>
                     </div>
                 </div>
             </div>
             
             <!-- Footer Section -->
-            <div class="footer-section flex justify-between items-end mt-6">
+            <div class="footer-section flex justify-between items-end mt-2">
                 <div class="company-info text-sm text-gray-300">
                     <p>© 2025 Smartlog AI</p>
                 </div>
                 <div class="slide-info text-sm text-gray-300">
-                    <p>13 / 19</p>
+                    <p>13 / 20</p>
                 </div>
             </div>
         </div>

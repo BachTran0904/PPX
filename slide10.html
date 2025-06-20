@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cấp độ 1 - RUN: Tối ưu hóa Hiệu quả & Chi phí</title>
+    <title>Các Thành Phần Kiến Trúc Chính & Đảm Bảo Tin Cậy</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
@@ -43,33 +43,15 @@
             opacity: 0.05;
             z-index: 1;
         }
-        .product-card {
+        .component-card {
             background-color: rgba(255, 255, 255, 0.05);
-            border-radius: 10px;
+            border-radius: 8px;
             transition: all 0.3s ease;
-            border: 1px solid transparent;
-            height: 100%;
+            border: 1px solid rgba(0, 194, 182, 0.2);
         }
-        .product-card:hover {
-            border-color: rgba(0, 194, 182, 0.3);
-            background-color: rgba(0, 194, 182, 0.05);
-        }
-        .level-badge {
-            background-color: #00c2b6;
-            color: #0a2540;
-            font-weight: 700;
-            padding: 3px 12px;
-            border-radius: 20px;
-            display: inline-block;
-            margin-left: 10px;
-        }
-        .price-tag {
-            background-color: rgba(246, 173, 85, 0.2);
-            color: #f6ad55;
-            padding: 2px 8px;
-            border-radius: 4px;
-            font-size: 0.8rem;
-            display: inline-block;
+        .component-card:hover {
+            background-color: rgba(0, 194, 182, 0.1);
+            border-color: rgba(0, 194, 182, 0.4);
         }
         .feature-icon {
             width: 50px;
@@ -77,19 +59,23 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            border-radius: 50%;
+            border-radius: 10px;
             background-color: rgba(0, 194, 182, 0.2);
             color: #00c2b6;
-            font-size: 1.4rem;
-            margin: 0 auto 1rem;
+            font-size: 1.5rem;
         }
-        .stat-highlight {
-            color: #f6ad55;
-            font-weight: bold;
+        .reliability-card {
+            background-color: rgba(255, 255, 255, 0.05);
+            border-radius: 8px;
+            transition: all 0.2s ease;
+            border: 1px solid transparent;
+        }
+        .reliability-card:hover {
+            background-color: rgba(0, 194, 182, 0.05);
+            border-color: rgba(0, 194, 182, 0.3);
         }
         .tech-tag {
             background-color: rgba(0, 194, 182, 0.1);
-            border: 1px solid rgba(0, 194, 182, 0.3);
             color: #00c2b6;
             padding: 2px 8px;
             border-radius: 4px;
@@ -98,19 +84,10 @@
             margin-right: 4px;
             margin-bottom: 4px;
         }
-        .warehouse-image {
-            border-radius: 10px;
-            border: 2px solid rgba(0, 194, 182, 0.3);
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-            max-height: 180px;
-            object-fit: cover;
-            width: 100%;
-        }
-        .image-caption {
-            background-color: rgba(0, 194, 182, 0.1);
-            border-radius: 0 0 8px 8px;
-            padding: 6px 10px;
-            font-size: 0.8rem;
+        .stats-card {
+            background-color: rgba(255, 255, 255, 0.05);
+            border-radius: 8px;
+            padding: 12px;
             text-align: center;
         }
     </style>
@@ -126,158 +103,207 @@
         
         <div class="content-area flex flex-col justify-between p-10 h-full">
             <!-- Header Section -->
-            <div class="header-section mb-2">
+            <div class="header-section mb-4">
                 <div class="accent-bar mb-3"></div>
-                <div class="flex items-center">
-                    <h1 class="text-3xl font-bold mb-1">Cấp độ 1 - RUN: Tối ưu hóa Hiệu quả & Chi phí</h1>
-                    <span class="level-badge text-sm">$25K-$400K</span>
-                </div>
-                <p class="text-lg text-gray-300">Tự động hóa các tác vụ lặp lại, nâng cao hiệu quả hoạt động cơ bản</p>
-            </div>
-            
-            <!-- Warehouse Image Section -->
-            <div class="mb-4">
-                <div class="flex items-center justify-center relative">
-                    <img src="https://page1.genspark.site/v1/base64_upload/0e82f1be46a94d45072114183871c338" alt="Smart Warehouse with AI Dashboard" class="warehouse-image">
-                    <div class="absolute bottom-0 right-0 bg-cyan-900 bg-opacity-80 px-3 py-1 m-2 rounded text-xs">
-                        <i class="fas fa-robot mr-1 text-cyan-400"></i>
-                        <span>AI-powered warehouse automation</span>
-                    </div>
-                </div>
+                <h1 class="text-3xl font-bold mb-2">Các Thành Phần Kiến Trúc Chính & Đảm Bảo Tin Cậy</h1>
+                <p class="text-lg text-gray-300 w-3/4">Công nghệ tiên tiến được tích hợp nhịp nhàng cho hệ thống AI đáng tin cậy</p>
             </div>
             
             <!-- Main Content Section -->
-            <div class="main-content flex-1">
-                <div class="grid grid-cols-3 gap-5">
-                    <!-- Product 1: Conversational AI Customer Support -->
-                    <div class="product-card p-4 flex flex-col">
-                        <div class="mb-3 text-center">
-                            <div class="feature-icon">
-                                <i class="fas fa-headset"></i>
+            <div class="main-content flex-1 flex flex-row space-x-6">
+                <!-- Left Column - Architecture Components -->
+                <div class="w-1/2 space-y-4">
+                    <h2 class="text-xl font-semibold text-cyan-400 mb-2">Kiến Trúc Hệ Thống</h2>
+                    
+                    <!-- Component 1: Reasoning Engine -->
+                    <div class="component-card p-4">
+                        <div class="flex items-start">
+                            <div class="feature-icon mr-4 flex-shrink-0">
+                                <i class="fas fa-brain"></i>
                             </div>
-                            <h2 class="text-lg font-semibold text-white">Conversational AI Customer Support</h2>
-                            <span class="price-tag mt-1">$25K - $400K</span>
-                        </div>
-                        
-                        <p class="text-gray-300 text-sm mb-2">Cải thiện trải nghiệm khách hàng với hỗ trợ 24/7, tự động giải quyết các truy vấn thường gặp.</p>
-                        
-                        <div class="tech-tags mb-3">
-                            <span class="tech-tag">LLM (GPT-4o, Llama 3)</span>
-                            <span class="tech-tag">Knowledge Base</span>
-                        </div>
-                        
-                        <div class="mt-auto">
-                            <h3 class="text-cyan-400 font-medium mb-1 text-center text-sm">ROI Highlights:</h3>
-                            <div class="grid grid-cols-2 gap-2">
-                                <div class="bg-opacity-10 bg-white rounded p-1 text-center">
-                                    <p class="text-md font-bold text-yellow-400">70%</p>
-                                    <p class="text-xs text-gray-300">Giải quyết tự động</p>
+                            <div>
+                                <div class="flex items-center">
+                                    <h3 class="text-lg font-semibold text-white">Động Cơ Suy Luận</h3>
+                                    <span class="ml-2 text-xs bg-cyan-900 bg-opacity-50 text-cyan-300 px-2 py-1 rounded">The "Brain"</span>
                                 </div>
-                                <div class="bg-opacity-10 bg-white rounded p-1 text-center">
-                                    <p class="text-md font-bold text-yellow-400">3x</p>
-                                    <p class="text-xs text-gray-300">Tăng tốc phản hồi</p>
+                                <p class="text-sm text-gray-300 mt-1">Mô hình Ngôn ngữ Lớn được tinh chỉnh làm động cơ suy luận cho tác tử cấp cao</p>
+                                
+                                <div class="flex flex-wrap mt-2">
+                                    <span class="tech-tag">Llama 3</span>
+                                    <span class="tech-tag">GPT-4/o1-preview</span>
                                 </div>
-                                <div class="bg-opacity-10 bg-white rounded p-1 text-center">
-                                    <p class="text-md font-bold text-yellow-400">30%</p>
-                                    <p class="text-xs text-gray-300">Tiết kiệm chi phí</p>
-                                </div>
-                                <div class="bg-opacity-10 bg-white rounded p-1 text-center">
-                                    <p class="text-md font-bold text-yellow-400">25%</p>
-                                    <p class="text-xs text-gray-300">Tăng chuyển đổi</p>
+                                
+                                <div class="mt-2 bg-blue-900 bg-opacity-20 p-2 rounded text-sm">
+                                    <span class="text-cyan-400 font-medium">Vai Trò:</span>
+                                    <p class="text-gray-300 mt-1 text-xs">Hiểu yêu cầu phức tạp, phân rã thành chuỗi nhiệm vụ và phân công cho tác tử chuyên môn</p>
                                 </div>
                             </div>
                         </div>
                     </div>
                     
-                    <!-- Product 2: AI Agent Vision -->
-                    <div class="product-card p-4 flex flex-col">
-                        <div class="mb-3 text-center">
-                            <div class="feature-icon">
-                                <i class="fas fa-eye"></i>
+                    <!-- Component 2: Micro Agents -->
+                    <div class="component-card p-4">
+                        <div class="flex items-start">
+                            <div class="feature-icon mr-4 flex-shrink-0">
+                                <i class="fas fa-cogs"></i>
                             </div>
-                            <h2 class="text-lg font-semibold text-white">AI Agent Vision</h2>
-                            <span class="price-tag mt-1">$25K - $400K</span>
-                        </div>
-                        
-                        <p class="text-gray-300 text-sm mb-2">Tự động trích xuất dữ liệu từ chứng từ logistics, giảm thiểu nhập liệu thủ công và lỗi.</p>
-                        
-                        <div class="tech-tags mb-3">
-                            <span class="tech-tag">Computer Vision & OCR</span>
-                            <span class="tech-tag">NLP cho trích xuất</span>
-                        </div>
-                        
-                        <div class="mt-auto">
-                            <h3 class="text-cyan-400 font-medium mb-1 text-center text-sm">ROI Highlights:</h3>
-                            <div class="grid grid-cols-2 gap-2">
-                                <div class="bg-opacity-10 bg-white rounded p-1 text-center">
-                                    <p class="text-md font-bold text-yellow-400">80%</p>
-                                    <p class="text-xs text-gray-300">Giảm thời gian xử lý</p>
+                            <div>
+                                <div class="flex items-center">
+                                    <h3 class="text-lg font-semibold text-white">Tác Tử Vi Mô</h3>
+                                    <span class="ml-2 text-xs bg-cyan-900 bg-opacity-50 text-cyan-300 px-2 py-1 rounded">The "Workers"</span>
                                 </div>
-                                <div class="bg-opacity-10 bg-white rounded p-1 text-center">
-                                    <p class="text-md font-bold text-yellow-400">90%</p>
-                                    <p class="text-xs text-gray-300">Giảm lỗi nhập liệu</p>
-                                </div>
-                                <div class="bg-opacity-10 bg-white rounded p-1 text-center col-span-2">
-                                    <p class="text-md font-bold text-yellow-400">Đáng kể</p>
-                                    <p class="text-xs text-gray-300">Tăng tốc luân chuyển</p>
+                                <p class="text-sm text-gray-300 mt-1">Các tác tử chuyên biệt thực hiện các nhiệm vụ cụ thể trong hệ thống logistics</p>
+                                
+                                <div class="mt-2 bg-blue-900 bg-opacity-20 p-2 rounded text-sm">
+                                    <p class="text-gray-300 text-xs">Tác tử chuyên biệt xử lý các tác vụ như: ETA prediction, document extraction, và xử lý ngoại lệ</p>
                                 </div>
                             </div>
                         </div>
                     </div>
                     
-                    <!-- Product 3: Basic Fraud Detection -->
-                    <div class="product-card p-4 flex flex-col">
-                        <div class="mb-3 text-center">
-                            <div class="feature-icon">
-                                <i class="fas fa-shield-alt"></i>
+                    <!-- Component 3: Long-term Memory -->
+                    <div class="component-card p-4">
+                        <div class="flex items-start">
+                            <div class="feature-icon mr-4 flex-shrink-0">
+                                <i class="fas fa-database"></i>
                             </div>
-                            <h2 class="text-lg font-semibold text-white">Basic Fraud Detection</h2>
-                            <span class="price-tag mt-1">$50K - $150K</span>
-                        </div>
-                        
-                        <p class="text-gray-300 text-sm mb-2">Phát hiện giao dịch đáng ngờ dựa trên quy tắc và mẫu dữ liệu để ngăn chặn gian lận.</p>
-                        
-                        <div class="tech-tags mb-3">
-                            <span class="tech-tag">ML Algorithms cơ bản</span>
-                            <span class="tech-tag">Phân tích mẫu giao dịch</span>
-                        </div>
-                        
-                        <div class="mt-auto">
-                            <h3 class="text-cyan-400 font-medium mb-1 text-center text-sm">ROI Highlights:</h3>
-                            <div class="grid grid-cols-1 gap-2">
-                                <div class="bg-opacity-10 bg-white rounded p-1 text-center">
-                                    <p class="text-md font-bold text-yellow-400">Đáng kể</p>
-                                    <p class="text-xs text-gray-300">Giảm tổn thất</p>
+                            <div>
+                                <div class="flex items-center">
+                                    <h3 class="text-lg font-semibold text-white">Bộ Nhớ Dài Hạn</h3>
+                                    <span class="ml-2 text-xs bg-cyan-900 bg-opacity-50 text-cyan-300 px-2 py-1 rounded">Vector Database Core</span>
                                 </div>
-                                <div class="bg-opacity-10 bg-white rounded p-1 text-center">
-                                    <p class="text-md font-bold text-yellow-400">Cao</p>
-                                    <p class="text-xs text-gray-300">Tăng bảo mật</p>
+                                <p class="text-sm text-gray-300 mt-1">Lưu trữ bộ nhớ tình tiết và ngữ nghĩa để phản hồi được cá nhân hóa</p>
+                                
+                                <div class="flex flex-wrap mt-2">
+                                    <span class="tech-tag">Vector Embeddings</span>
+                                    <span class="tech-tag">Semantic Search</span>
                                 </div>
-                                <div class="bg-opacity-10 bg-white rounded p-1 text-center">
-                                    <p class="text-md font-bold text-yellow-400">Tăng mạnh</p>
-                                    <p class="text-xs text-gray-300">Cải thiện niềm tin</p>
+                                
+                                <div class="mt-2 bg-blue-900 bg-opacity-20 p-2 rounded text-sm">
+                                    <span class="text-cyan-400 font-medium">Ứng dụng:</span>
+                                    <p class="text-gray-300 mt-1 text-xs">Chuyển đổi tương tác, tài liệu, dữ liệu thành vector để tìm kiếm ngữ nghĩa hiệu quả</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Component 4: Communication Layer -->
+                    <div class="component-card p-4">
+                        <div class="flex items-start">
+                            <div class="feature-icon mr-4 flex-shrink-0">
+                                <i class="fas fa-network-wired"></i>
+                            </div>
+                            <div>
+                                <div class="flex items-center">
+                                    <h3 class="text-lg font-semibold text-white">Lớp Giao Tiếp</h3>
+                                    <span class="ml-2 text-xs bg-cyan-900 bg-opacity-50 text-cyan-300 px-2 py-1 rounded">Communication & Orchestration</span>
+                                </div>
+                                <p class="text-sm text-gray-300 mt-1">Quản lý luồng thông tin và điều phối giữa các tác tử trong hệ thống</p>
+                                
+                                <div class="flex flex-wrap mt-2">
+                                    <span class="tech-tag">API RESTful</span>
+                                    <span class="tech-tag">Event-Driven</span>
+                                    <span class="tech-tag">Kafka</span>
+                                </div>
+                                
+                                <div class="mt-2 bg-blue-900 bg-opacity-20 p-2 rounded text-sm">
+                                    <span class="text-cyan-400 font-medium">Đặc điểm:</span>
+                                    <p class="text-gray-300 mt-1 text-xs">Xử lý các yêu cầu đồng bộ và giao tiếp bất đồng bộ giữa các tác tử với khả năng mở rộng cao</p>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            
-            <!-- Footer Note -->
-            <div class="highlight-box p-3 mt-2">
-                <div class="flex items-center">
-                    <i class="fas fa-lightbulb text-yellow-400 mr-3"></i>
-                    <p class="text-sm text-gray-300">Các giải pháp cấp độ RUN tăng cường tự động hóa, giảm chi phí vận hành và tối ưu hóa trải nghiệm khách hàng.</p>
+                
+                <!-- Right Column - Reliability Features -->
+                <div class="w-1/2 space-y-4">
+                    <h2 class="text-xl font-semibold text-cyan-400 mb-2">Đảm Bảo Sự Tin Cậy</h2>
+                    
+                    <div class="reliability-card p-4 mb-3">
+                        <h3 class="text-lg font-semibold text-white mb-2 flex items-center">
+                            <i class="fas fa-search-plus text-yellow-400 mr-2"></i>
+                            AI Có Thể Giải Thích
+                        </h3>
+                        
+                        <ul class="space-y-2 pl-8 list-disc text-gray-300 text-sm">
+                            <li>Kỹ thuật LIME & SHAP cho việc giải thích quyết định của mô hình</li>
+                            <li>Bản đồ nhiệt chú ý (attention heat maps) để hiểu trọng số</li>
+                            <li>Chuỗi giải thích quyết định rõ ràng, minh bạch cho người dùng</li>
+                        </ul>
+                        
+                        <div class="highlight-box p-3 mt-3">
+                            <p class="text-xs text-gray-300">Minh bạch hoàn toàn: Mọi quyết định đều có thể truy vết và giải thích rõ ràng</p>
+                        </div>
+                    </div>
+                    
+                    <div class="reliability-card p-4 mb-3">
+                        <h3 class="text-lg font-semibold text-white mb-2 flex items-center">
+                            <i class="fas fa-shield-alt text-yellow-400 mr-2"></i>
+                            Kiểm Toán & Giám Sát
+                        </h3>
+                        
+                        <ul class="space-y-2 pl-8 list-disc text-gray-300 text-sm">
+                            <li>Ghi nhật ký quyết định và hành động của hệ thống AI</li>
+                            <li>Hệ thống giám sát thời gian thực các metrics quan trọng</li>
+                            <li>Con người trong vòng lặp (Human-in-the-loop) cho quyết định quan trọng</li>
+                        </ul>
+                        
+                        <div class="highlight-box p-3 mt-3">
+                            <p class="text-xs text-gray-300">Lịch sử bất biến: Ghi chép tất cả hành động trong sổ cái không thể thay đổi</p>
+                        </div>
+                    </div>
+                    
+                    <div class="reliability-card p-4 mb-3">
+                        <h3 class="text-lg font-semibold text-white mb-2 flex items-center">
+                            <i class="fas fa-check-double text-yellow-400 mr-2"></i>
+                            Tuân Thủ Quản Trị
+                        </h3>
+                        
+                        <div class="grid grid-cols-3 gap-2 mb-3">
+                            <div class="bg-opacity-20 bg-white rounded p-2 text-center">
+                                <p class="text-sm font-semibold text-white">NIST AI</p>
+                                <p class="text-xs text-gray-300">Risk Management</p>
+                            </div>
+                            <div class="bg-opacity-20 bg-white rounded p-2 text-center">
+                                <p class="text-sm font-semibold text-white">OECD</p>
+                                <p class="text-xs text-gray-300">AI Principles</p>
+                            </div>
+                            <div class="bg-opacity-20 bg-white rounded p-2 text-center">
+                                <p class="text-sm font-semibold text-white">GMPM</p>
+                                <p class="text-xs text-gray-300">Lifecycle</p>
+                            </div>
+                        </div>
+                        
+                        <div class="highlight-box p-3 mt-2">
+                            <p class="text-xs text-gray-300">Kiểm soát con người: Yêu cầu phê duyệt cho các quyết định có rủi ro cao</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Stats Section -->
+                    <div class="flex space-x-4 mt-4">
+                        <div class="stats-card w-1/2">
+                            <div class="text-xs text-gray-400">Khách hàng tin tưởng</div>
+                            <div class="text-3xl font-bold text-yellow-400 my-1">1000+</div>
+                            <div class="text-xs text-cyan-400">Doanh nghiệp logistics trên toàn quốc</div>
+                        </div>
+                        
+                        <div class="stats-card w-1/2">
+                            <div class="text-xs text-gray-400">Thời gian hoạt động</div>
+                            <div class="text-3xl font-bold text-yellow-400 my-1">99.9%</div>
+                            <div class="text-xs text-cyan-400">Độ tin cậy hệ thống tối đa</div>
+                        </div>
+                    </div>
+                    
                 </div>
             </div>
             
             <!-- Footer Section -->
-            <div class="footer-section flex justify-between items-end mt-2">
-                <div class="company-info text-sm text-gray-300">
+            <div class="footer-section flex justify-between items-end mt-4">
+                <div class="company-info text-sm text-gray-400">
                     <p>© 2025 Smartlog AI</p>
                 </div>
-                <div class="slide-info text-sm text-gray-300">
-                    <p>10 / 19</p>
+                <div class="slide-info text-sm text-gray-400">
+                    <p>9 / 19</p>
                 </div>
             </div>
         </div>
