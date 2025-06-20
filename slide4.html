@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nội dung trình bày - Smartlog AI</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Montserrat', sans-serif;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }
+        .slide-container {
+            width: 1280px;
+            min-height: 720px;
+            position: relative;
+            background-color: #0a2540;
+            color: white;
+            overflow: hidden;
+        }
+        .accent-bar {
+            height: 6px;
+            width: 80px;
+            background-color: #00c2b6;
+        }
+        .section-item {
+            transition: all 0.3s ease;
+            border-left: 3px solid transparent;
+            padding-left: 1rem;
+        }
+        .section-item:hover {
+            border-left-color: #00c2b6;
+            background-color: rgba(0, 194, 182, 0.1);
+        }
+        .section-number {
+            background-color: rgba(0, 194, 182, 0.2);
+            border: 1px solid #00c2b6;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+        }
+        .bg-pattern {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 500px;
+            height: 500px;
+            opacity: 0.05;
+            z-index: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="slide-container flex flex-col">
+        <!-- Background pattern -->
+        <div class="bg-pattern">
+            <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                <path fill="#FFFFFF" d="M42.9,-68.5C55.9,-61.5,67.2,-50.9,75.1,-37.6C83,-24.3,87.5,-8.3,85.8,6.8C84.1,21.9,76.3,36,66.4,48.6C56.5,61.2,44.3,72.3,30.2,77.3C16,82.3,0,81.2,-16.2,78C-32.5,74.8,-49,69.6,-60.5,59C-72.1,48.3,-78.7,32.3,-79,16.4C-79.4,0.5,-73.6,-15.2,-65.2,-28.1C-56.9,-40.9,-46,-50.9,-34.1,-58.6C-22.2,-66.2,-9.2,-71.6,3.3,-76.7C15.7,-81.8,29.9,-75.5,42.9,-68.5Z" transform="translate(100 100)" />
+            </svg>
+        </div>
+        
+        <div class="content flex flex-col justify-between p-10 relative z-10 h-full">
+            <!-- Header Section -->
+            <div class="header-section mb-8">
+                <div class="accent-bar mb-3"></div>
+                <h1 class="text-3xl font-bold mb-2">Nội dung trình bày</h1>
+                <p class="text-lg text-gray-300">Smartlog AI - Người đồng hành thông minh cho ngành logistics Việt Nam</p>
+            </div>
+            
+            <!-- Table of Contents Section -->
+            <div class="toc-section grid grid-cols-2 gap-x-12 gap-y-6 mb-16">
+                <!-- Left Column -->
+                <div class="space-y-6">
+                    <!-- Section 1 -->
+                    <div class="section-item flex items-center space-x-4 p-3">
+                        <div class="section-number font-bold">1</div>
+                        <div>
+                            <h3 class="text-xl font-semibold text-white">Giá trị chính</h3>
+                            <p class="text-sm text-gray-300">Tự động hóa và ROI vượt trội</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Section 2 -->
+                    <div class="section-item flex items-center space-x-4 p-3">
+                        <div class="section-number font-bold">2</div>
+                        <div>
+                            <h3 class="text-xl font-semibold text-white">Thị trường AI Logistics</h3>
+                            <p class="text-sm text-gray-300">Dữ liệu và xu hướng bùng nổ</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Section 3 -->
+                    <div class="section-item flex items-center space-x-4 p-3">
+                        <div class="section-number font-bold">3</div>
+                        <div>
+                            <h3 class="text-xl font-semibold text-white">Tầm nhìn: Người đồng hành thông minh</h3>
+                            <p class="text-sm text-gray-300">NLP, tự động hóa và dân chủ hóa dữ liệu</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Section 4 -->
+                    <div class="section-item flex items-center space-x-4 p-3">
+                        <div class="section-number font-bold">4</div>
+                        <div>
+                            <h3 class="text-xl font-semibold text-white">Hệ sinh thái sản phẩm</h3>
+                            <p class="text-sm text-gray-300">Hệ thống đa tác tử AI chuyên biệt</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Right Column -->
+                <div class="space-y-6">
+                    <!-- Section 5 -->
+                    <div class="section-item flex items-center space-x-4 p-3">
+                        <div class="section-number font-bold">5</div>
+                        <div>
+                            <h3 class="text-xl font-semibold text-white">Lộ trình phát triển</h3>
+                            <p class="text-sm text-gray-300">Chiến lược 2025-2035</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Section 6 -->
+                    <div class="section-item flex items-center space-x-4 p-3">
+                        <div class="section-number font-bold">6</div>
+                        <div>
+                            <h3 class="text-xl font-semibold text-white">Giá trị cốt lõi</h3>
+                            <p class="text-sm text-gray-300">Hiệu quả, dự đoán và chuỗi cung ứng tự phục hồi</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Section 7 -->
+                    <div class="section-item flex items-center space-x-4 p-3">
+                        <div class="section-number font-bold">7</div>
+                        <div>
+                            <h3 class="text-xl font-semibold text-white">KPI chiến lược</h3>
+                            <p class="text-sm text-gray-300">Mục tiêu đến 2035</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Section 8 -->
+                    <div class="section-item flex items-center space-x-4 p-3">
+                        <div class="section-number font-bold">8</div>
+                        <div>
+                            <h3 class="text-xl font-semibold text-white">Kêu gọi hành động</h3>
+                            <p class="text-sm text-gray-300">Sẵn sàng chuyển đổi cùng Smartlog AI</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Footer Section -->
+            <div class="footer-section flex justify-between items-end">
+                <div class="company-info text-sm text-gray-300">
+                    <p>© 2025 Smartlog AI</p>
+                </div>
+                <div class="slide-info text-sm text-gray-300">
+                    <p>2 / 12</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

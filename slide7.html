@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tầm nhìn: Người đồng hành thông minh</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Montserrat', sans-serif;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }
+        .slide-container {
+            width: 1280px;
+            min-height: 720px;
+            position: relative;
+            background-color: #0a2540;
+            color: white;
+        }
+        .accent-bar {
+            height: 6px;
+            width: 60px;
+            background-color: #00c2b6;
+        }
+        .highlight-box {
+            background-color: rgba(0, 194, 182, 0.15);
+            border-left: 4px solid #00c2b6;
+        }
+        .content-area {
+            position: relative;
+            z-index: 10;
+        }
+        .bg-pattern {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 500px;
+            height: 500px;
+            opacity: 0.05;
+            z-index: 1;
+        }
+        .feature-icon {
+            width: 60px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 12px;
+            background-color: rgba(0, 194, 182, 0.2);
+            color: #00c2b6;
+        }
+        .ai-companion-image {
+            border: 2px solid rgba(0, 194, 182, 0.3);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+            border-radius: 8px;
+        }
+    </style>
+</head>
+<body>
+    <div class="slide-container flex flex-col">
+        <!-- Background pattern -->
+        <div class="bg-pattern">
+            <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                <path fill="#FFFFFF" d="M42.9,-68.5C55.9,-61.5,67.2,-50.9,75.1,-37.6C83,-24.3,87.5,-8.3,85.8,6.8C84.1,21.9,76.3,36,66.4,48.6C56.5,61.2,44.3,72.3,30.2,77.3C16,82.3,0,81.2,-16.2,78C-32.5,74.8,-49,69.6,-60.5,59C-72.1,48.3,-78.7,32.3,-79,16.4C-79.4,0.5,-73.6,-15.2,-65.2,-28.1C-56.9,-40.9,-46,-50.9,-34.1,-58.6C-22.2,-66.2,-9.2,-71.6,3.3,-76.7C15.7,-81.8,29.9,-75.5,42.9,-68.5Z" transform="translate(100 100)" />
+            </svg>
+        </div>
+        
+        <div class="content-area flex flex-col justify-between p-10 h-full">
+            <!-- Header Section -->
+            <div class="header-section mb-6">
+                <div class="accent-bar mb-3"></div>
+                <h1 class="text-3xl font-bold mb-2">Tầm nhìn: Người đồng hành thông minh</h1>
+                <p class="text-lg text-gray-300 w-3/4">Smartlog AI - Vượt xa khái niệm chatbot truyền thống</p>
+            </div>
+            
+            <!-- Main Content Section -->
+            <div class="main-content flex flex-row space-x-8">
+                <!-- Left Column - Text Content -->
+                <div class="w-1/2 space-y-6">
+                    <div class="highlight-box p-4 mb-6">
+                        <h3 class="text-xl font-semibold text-cyan-400 mb-2">Đối tác AI chủ động</h3>
+                        <p class="text-gray-300">Trợ lý AI Smartlog không chỉ là một chatbot hay công cụ tự động hóa thông thường. Chúng tôi xây dựng một "người đồng hành thông minh" - một đối tác chủ động, có khả năng đối thoại dành cho mọi người dùng trong hệ sinh thái logistics.</p>
+                    </div>
+                    
+                    <div class="key-points space-y-4">
+                        <div class="flex items-start space-x-4">
+                            <div class="feature-icon text-2xl">
+                                <i class="fas fa-brain"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-lg font-semibold text-white">Hiểu ý định phức tạp</h4>
+                                <p class="text-sm text-gray-300">Sử dụng NLP tiên tiến để hiểu các lệnh logistics đặc thù theo ngữ cảnh</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start space-x-4">
+                            <div class="feature-icon text-2xl">
+                                <i class="fas fa-cogs"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-lg font-semibold text-white">Tự động hóa quy trình</h4>
+                                <p class="text-sm text-gray-300">Xâu chuỗi nhiều hành động trên các module khác nhau từ một lệnh duy nhất</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start space-x-4">
+                            <div class="feature-icon text-2xl">
+                                <i class="fas fa-lightbulb"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-lg font-semibold text-white">Thông tin chủ động</h4>
+                                <p class="text-sm text-gray-300">Đưa ra lời khuyên có giá trị mà người dùng chưa yêu cầu</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start space-x-4">
+                            <div class="feature-icon text-2xl">
+                                <i class="fas fa-database"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-lg font-semibold text-white">Dân chủ hóa dữ liệu</h4>
+                                <p class="text-sm text-gray-300">Cho phép người dùng không chuyên truy vấn dữ liệu phức tạp qua ngôn ngữ tự nhiên</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Right Column - Visual Elements -->
+                <div class="w-1/2 flex flex-col items-center justify-center">
+                    <div class="mb-6 text-center">
+                        <h3 class="text-lg font-medium mb-3 text-cyan-400">Trải nghiệm thông minh trong logistics</h3>
+                        <img src="https://res.cloudinary.com/daog6scxm/image/upload/v1697194844/cms/logistics-dashboard/Logistics_Dashboard_40_ezalg1.webp" alt="Smart Logistics Dashboard" class="ai-companion-image w-full max-h-64 object-cover" />
+                    </div>
+                    
+                    <div class="highlight-box p-4 w-full">
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center space-x-3">
+                                <div class="w-10 h-10 bg-blue-600 rounded-full flex items-center justify-center">
+                                    <i class="fas fa-comment-dots text-white"></i>
+                                </div>
+                                <p class="text-white font-medium">Smartlog AI</p>
+                            </div>
+                            <div>
+                                <span class="px-2 py-1 rounded bg-green-600 bg-opacity-30 text-green-400 text-xs">Đang hoạt động</span>
+                            </div>
+                        </div>
+                        <div class="mt-3 pl-12 text-sm">
+                            <p class="text-gray-300">Tôi nhận thấy đơn hàng #A12345 có khả năng bị trễ. Đã tự động đề xuất lộ trình thay thế và thông báo cho khách hàng. Bạn có muốn xem chi tiết không?</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Footer Section -->
+            <div class="footer-section flex justify-between items-end mt-6">
+                <div class="company-info text-sm text-gray-300">
+                    <p>© 2025 Smartlog AI</p>
+                </div>
+                <div class="slide-info text-sm text-gray-300">
+                    <p>5 / 12</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

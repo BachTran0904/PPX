@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cấp độ 3 - TRANSFORM: Tự chủ & Đổi mới Chiến lược</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Montserrat', sans-serif;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }
+        .slide-container {
+            width: 1280px;
+            min-height: 720px;
+            position: relative;
+            background-color: #0a2540;
+            color: white;
+        }
+        .accent-bar {
+            height: 6px;
+            width: 60px;
+            background-color: #00c2b6;
+        }
+        .highlight-box {
+            background-color: rgba(0, 194, 182, 0.15);
+            border-left: 4px solid #00c2b6;
+        }
+        .content-area {
+            position: relative;
+            z-index: 10;
+        }
+        .bg-pattern {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 500px;
+            height: 500px;
+            opacity: 0.05;
+            z-index: 1;
+        }
+        .transform-card {
+            background-color: rgba(255, 255, 255, 0.05);
+            border-radius: 8px;
+            border-left: 4px solid #00c2b6;
+            transition: all 0.3s ease;
+        }
+        .transform-card:hover {
+            background-color: rgba(0, 194, 182, 0.1);
+        }
+        .product-icon {
+            width: 60px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 12px;
+            background-color: rgba(0, 194, 182, 0.2);
+            color: #00c2b6;
+        }
+        .price-tag {
+            display: inline-block;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            padding: 4px 12px;
+            font-size: 14px;
+            color: #ffc107;
+        }
+        .stat-highlight {
+            color: #ffc107;
+            font-weight: bold;
+        }
+        .feature-tag {
+            display: inline-block;
+            background-color: rgba(0, 194, 182, 0.2);
+            border-radius: 4px;
+            padding: 2px 8px;
+            font-size: 12px;
+            margin-right: 6px;
+            margin-bottom: 4px;
+            color: #e0e0e0;
+        }
+        .image-container {
+            border: 2px solid rgba(0, 194, 182, 0.3);
+            border-radius: 8px;
+            overflow: hidden;
+            height: 100%;
+            display: flex;
+        }
+        .main-image {
+            width: 100%;
+            object-fit: cover;
+            object-position: center;
+            min-height: 400px;
+        }
+    </style>
+</head>
+<body>
+    <div class="slide-container flex flex-col">
+        <!-- Background pattern -->
+        <div class="bg-pattern">
+            <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                <path fill="#FFFFFF" d="M42.9,-68.5C55.9,-61.5,67.2,-50.9,75.1,-37.6C83,-24.3,87.5,-8.3,85.8,6.8C84.1,21.9,76.3,36,66.4,48.6C56.5,61.2,44.3,72.3,30.2,77.3C16,82.3,0,81.2,-16.2,78C-32.5,74.8,-49,69.6,-60.5,59C-72.1,48.3,-78.7,32.3,-79,16.4C-79.4,0.5,-73.6,-15.2,-65.2,-28.1C-56.9,-40.9,-46,-50.9,-34.1,-58.6C-22.2,-66.2,-9.2,-71.6,3.3,-76.7C15.7,-81.8,29.9,-75.5,42.9,-68.5Z" transform="translate(100 100)" />
+            </svg>
+        </div>
+        
+        <div class="content-area flex flex-col justify-between p-10 h-full">
+            <!-- Header Section -->
+            <div class="header-section mb-4">
+                <div class="accent-bar mb-3"></div>
+                <h1 class="text-3xl font-bold mb-2">Cấp độ 3 - TRANSFORM: Tự chủ & Đổi mới Chiến lược</h1>
+                <p class="text-lg text-gray-300">Tự chủ hoàn toàn, tối ưu toàn diện và tạo mô hình kinh doanh mới</p>
+            </div>
+            
+            <!-- Layout with Image and Products -->
+            <div class="flex flex-row space-x-4 mb-4">
+                <!-- Left column: Image -->
+                <div class="w-1/2">
+                    <div class="image-container">
+                        <img src="https://page1.genspark.site/v1/base64_upload/8fd4a4497e13c95b5d3e185771fefd4b" alt="AI Supply Chain Analytics Dashboard" class="main-image" />
+                    </div>
+                </div>
+                
+                <!-- Right column: Products -->
+                <div class="w-1/2 grid grid-cols-2 gap-4">
+                    <!-- Product 1: Autonomous Inventory -->
+                    <div class="transform-card p-4">
+                        <div class="flex items-center justify-between mb-2">
+                            <div class="product-icon text-xl">
+                                <i class="fas fa-cubes"></i>
+                            </div>
+                            <div class="price-tag">
+                                $400K - $1M+
+                            </div>
+                        </div>
+                        <h3 class="text-lg font-semibold text-cyan-400 mb-1">Autonomous Inventory</h3>
+                        <p class="text-gray-300 text-xs mb-2">Chuỗi cung ứng tự phục hồi với khả năng tự động thích ứng.</p>
+                        
+                        <div class="highlight-box p-2 mt-2">
+                            <div class="grid grid-cols-3 gap-1">
+                                <div class="text-center">
+                                    <p class="stat-highlight text-sm">35%</p>
+                                    <p class="text-xs text-gray-300">Giảm tồn kho</p>
+                                </div>
+                                <div class="text-center">
+                                    <p class="stat-highlight text-sm">4h→30m</p>
+                                    <p class="text-xs text-gray-300">Thời gian phục hồi</p>
+                                </div>
+                                <div class="text-center">
+                                    <p class="stat-highlight text-sm">15-30%</p>
+                                    <p class="text-xs text-gray-300">Tiết kiệm chi phí</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Product 2: Fleet Management -->
+                    <div class="transform-card p-4">
+                        <div class="flex items-center justify-between mb-2">
+                            <div class="product-icon text-xl">
+                                <i class="fas fa-truck"></i>
+                            </div>
+                            <div class="price-tag">
+                                $400K - $1M+
+                            </div>
+                        </div>
+                        <h3 class="text-lg font-semibold text-cyan-400 mb-1">Autonomous Fleet</h3>
+                        <p class="text-gray-300 text-xs mb-2">Quản lý đội xe tự động hoàn toàn, từ điều phối đến phản ứng.</p>
+                        
+                        <div class="highlight-box p-2 mt-2">
+                            <div class="grid grid-cols-3 gap-1">
+                                <div class="text-center">
+                                    <p class="stat-highlight text-sm">Tối đa</p>
+                                    <p class="text-xs text-gray-300">Tối ưu sử dụng</p>
+                                </div>
+                                <div class="text-center">
+                                    <p class="stat-highlight text-sm">Đáng kể</p>
+                                    <p class="text-xs text-gray-300">Giảm chi phí</p>
+                                </div>
+                                <div class="text-center">
+                                    <p class="stat-highlight text-sm">Cao</p>
+                                    <p class="text-xs text-gray-300">Khả năng phục hồi</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Product 3: Digital Twin -->
+                    <div class="transform-card p-4">
+                        <div class="flex items-center justify-between mb-2">
+                            <div class="product-icon text-xl">
+                                <i class="fas fa-project-diagram"></i>
+                            </div>
+                            <div class="price-tag">
+                                $400K - $1M+
+                            </div>
+                        </div>
+                        <h3 class="text-lg font-semibold text-cyan-400 mb-1">Supply Chain Digital Twin</h3>
+                        <p class="text-gray-300 text-xs mb-2">Bản sao số sống động của toàn bộ chuỗi cung ứng.</p>
+                        
+                        <div class="highlight-box p-2 mt-2">
+                            <div class="grid grid-cols-3 gap-1">
+                                <div class="text-center">
+                                    <p class="stat-highlight text-sm">Đáng kể</p>
+                                    <p class="text-xs text-gray-300">Quyết định nhanh</p>
+                                </div>
+                                <div class="text-center">
+                                    <p class="stat-highlight text-sm">Cao</p>
+                                    <p class="text-xs text-gray-300">Giảm rủi ro</p>
+                                </div>
+                                <div class="text-center">
+                                    <p class="stat-highlight text-sm">Tối đa</p>
+                                    <p class="text-xs text-gray-300">Tối ưu toàn diện</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Technology Features -->
+                    <div class="p-4 bg-opacity-10 bg-blue-900 rounded-lg">
+                        <h3 class="text-lg font-semibold text-cyan-400 mb-2">Công nghệ tiên tiến</h3>
+                        <div class="tech-features flex flex-wrap mb-2">
+                            <span class="feature-tag"><i class="fas fa-server mr-1"></i> Orchestrator</span>
+                            <span class="feature-tag"><i class="fas fa-copy mr-1"></i> Digital Twin</span>
+                            <span class="feature-tag"><i class="fas fa-shield-alt mr-1"></i> Risk Management</span>
+                            <span class="feature-tag"><i class="fas fa-brain mr-1"></i> Reinforcement Learning</span>
+                            <span class="feature-tag"><i class="fas fa-database mr-1"></i> Real-time Data</span>
+                            <span class="feature-tag"><i class="fas fa-chart-bar mr-1"></i> Visual Analytics</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Bottom highlights box -->
+            <div class="highlight-box p-4">
+                <div class="flex items-center space-x-3">
+                    <div class="product-icon text-2xl">
+                        <i class="fas fa-lightbulb"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-lg font-medium text-cyan-400">Giá trị TRANSFORM</h3>
+                        <p class="text-sm text-gray-300">Cấp độ TRANSFORM không chỉ tối ưu hóa quy trình hiện có mà còn tạo ra mô hình kinh doanh hoàn toàn mới - cho phép doanh nghiệp trở thành người dẫn đầu thị trường với chuỗi cung ứng tự động hóa tiên tiến.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Footer Section -->
+            <div class="footer-section flex justify-between items-end mt-4">
+                <div class="company-info text-sm text-gray-300">
+                    <p>© 2025 Smartlog AI</p>
+                </div>
+                <div class="slide-info text-sm text-gray-300">
+                    <p>13 / 15</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

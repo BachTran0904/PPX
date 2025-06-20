@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>4 điểm mạnh của Smartlog AI</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Montserrat', sans-serif;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }
+        .slide-container {
+            width: 1280px;
+            min-height: 720px;
+            position: relative;
+            background-color: #0a2540;
+            color: white;
+        }
+        .accent-bar {
+            height: 6px;
+            width: 60px;
+            background-color: #00c2b6;
+        }
+        .highlight-box {
+            background-color: rgba(0, 194, 182, 0.15);
+            border-left: 4px solid #00c2b6;
+        }
+        .content-area {
+            position: relative;
+            z-index: 10;
+        }
+        .bg-pattern {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 500px;
+            height: 500px;
+            opacity: 0.05;
+            z-index: 1;
+        }
+        .feature-icon {
+            width: 70px;
+            height: 70px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 12px;
+            background-color: rgba(0, 194, 182, 0.2);
+            color: #00c2b6;
+        }
+        .feature-card {
+            background-color: rgba(255, 255, 255, 0.05);
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            border: 1px solid transparent;
+        }
+        .feature-card:hover {
+            border-color: #00c2b6;
+            background-color: rgba(0, 194, 182, 0.1);
+        }
+    </style>
+</head>
+<body>
+    <div class="slide-container flex flex-col">
+        <!-- Background pattern -->
+        <div class="bg-pattern">
+            <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                <path fill="#FFFFFF" d="M42.9,-68.5C55.9,-61.5,67.2,-50.9,75.1,-37.6C83,-24.3,87.5,-8.3,85.8,6.8C84.1,21.9,76.3,36,66.4,48.6C56.5,61.2,44.3,72.3,30.2,77.3C16,82.3,0,81.2,-16.2,78C-32.5,74.8,-49,69.6,-60.5,59C-72.1,48.3,-78.7,32.3,-79,16.4C-79.4,0.5,-73.6,-15.2,-65.2,-28.1C-56.9,-40.9,-46,-50.9,-34.1,-58.6C-22.2,-66.2,-9.2,-71.6,3.3,-76.7C15.7,-81.8,29.9,-75.5,42.9,-68.5Z" transform="translate(100 100)" />
+            </svg>
+        </div>
+        
+        <div class="content-area flex flex-col justify-between p-10 h-full">
+            <!-- Header Section -->
+            <div class="header-section mb-6">
+                <div class="accent-bar mb-3"></div>
+                <h1 class="text-3xl font-bold mb-2">4 điểm mạnh của Smartlog AI</h1>
+                <p class="text-lg text-gray-300 w-3/4">Không chỉ là chatbot hay công cụ tự động hóa thông thường, Smartlog AI là một người đồng hành thông minh cho ngành logistics</p>
+            </div>
+            
+            <!-- Main Content Section -->
+            <div class="main-content mt-4">
+                <div class="grid grid-cols-2 gap-6">
+                    <!-- Feature 1 -->
+                    <div class="feature-card p-6 flex items-start space-x-4">
+                        <div class="feature-icon text-3xl">
+                            <i class="fas fa-brain"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-semibold text-cyan-400 mb-2">Hiểu ý định phức tạp</h3>
+                            <p class="text-gray-300">Sử dụng NLP tiên tiến để hiểu các lệnh logistics đặc thù theo ngữ cảnh, nhận dạng nhu cầu người dùng ngay cả khi được diễn đạt không rõ ràng.</p>
+                            <div class="mt-2 px-3 py-1 bg-blue-900 bg-opacity-50 inline-block rounded text-sm">
+                                <i class="fas fa-check-circle text-green-400 mr-1"></i>
+                                <span>Advanced NLP</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Feature 2 -->
+                    <div class="feature-card p-6 flex items-start space-x-4">
+                        <div class="feature-icon text-3xl">
+                            <i class="fas fa-project-diagram"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-semibold text-cyan-400 mb-2">Tự động hóa quy trình</h3>
+                            <p class="text-gray-300">Xâu chuỗi nhiều hành động trên các module khác nhau từ một lệnh duy nhất, tối ưu hóa quy trình làm việc và giảm thiểu thao tác thủ công.</p>
+                            <div class="mt-2 px-3 py-1 bg-blue-900 bg-opacity-50 inline-block rounded text-sm">
+                                <i class="fas fa-cogs text-yellow-400 mr-1"></i>
+                                <span>Process automation</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Feature 3 -->
+                    <div class="feature-card p-6 flex items-start space-x-4">
+                        <div class="feature-icon text-3xl">
+                            <i class="fas fa-lightbulb"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-semibold text-cyan-400 mb-2">Thông tin chủ động</h3>
+                            <p class="text-gray-300">Đưa ra lời khuyên có giá trị mà người dùng chưa yêu cầu, dự đoán nhu cầu và cung cấp thông tin hữu ích kịp thời, nâng cao trải nghiệm.</p>
+                            <div class="mt-2 px-3 py-1 bg-blue-900 bg-opacity-50 inline-block rounded text-sm">
+                                <i class="fas fa-chart-line text-cyan-400 mr-1"></i>
+                                <span>Proactive advisor</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Feature 4 -->
+                    <div class="feature-card p-6 flex items-start space-x-4">
+                        <div class="feature-icon text-3xl">
+                            <i class="fas fa-database"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-semibold text-cyan-400 mb-2">Dân chủ hóa dữ liệu</h3>
+                            <p class="text-gray-300">Cho phép người dùng không chuyên truy vấn dữ liệu phức tạp qua ngôn ngữ tự nhiên, biến đổi dữ liệu thành thông tin có giá trị cho mọi cấp độ.</p>
+                            <div class="mt-2 px-3 py-1 bg-blue-900 bg-opacity-50 inline-block rounded text-sm">
+                                <i class="fas fa-comments text-purple-400 mr-1"></i>
+                                <span>Natural language queries</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="highlight-box p-4 mt-6">
+                    <div class="flex items-center space-x-3">
+                        <i class="fas fa-quote-left text-2xl text-cyan-400"></i>
+                        <p class="text-lg italic text-gray-300">"Trợ lý AI Smartlog không chỉ hiểu những gì bạn yêu cầu, mà còn hiểu những gì bạn cần trước khi bạn yêu cầu."</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Footer Section -->
+            <div class="footer-section flex justify-between items-end mt-6">
+                <div class="company-info text-sm text-gray-300">
+                    <p>© 2025 Smartlog AI</p>
+                </div>
+                <div class="slide-info text-sm text-gray-300">
+                    <p>6 / 12</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
