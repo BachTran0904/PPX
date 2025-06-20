@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smartlog AI</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Montserrat', sans-serif;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }
+        .slide-container {
+            width: 1280px;
+            min-height: 720px;
+            position: relative;
+            background-color: #0a2540;
+            color: white;
+            overflow: hidden;
+        }
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(10, 37, 64, 0.8);
+            z-index: 1;
+        }
+        .content {
+            position: relative;
+            z-index: 2;
+            height: 100%;
+        }
+        .accent-bar {
+            height: 8px;
+            width: 120px;
+            background-color: #00c2b6;
+        }
+        .hero-image {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 60%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.7;
+            z-index: 0;
+        }
+        .metric-box {
+            background-color: rgba(0, 194, 182, 0.15);
+            border-left: 4px solid #00c2b6;
+            padding: 10px 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="slide-container flex flex-col">
+        <img src="https://info.interroll.com/hs-fs/hubfs/AI%20warehouse%20automation%20blog%20image.webp?width=1792&height=1024&name=AI%20warehouse%20automation%20blog%20image.webp" alt="AI Warehouse Automation" class="hero-image">
+        <div class="overlay"></div>
+        
+        <div class="content flex flex-col justify-between p-10">
+            <div class="header-section mt-16 w-2/3">
+                <div class="accent-bar mb-4"></div>
+                <h1 class="text-4xl font-bold mb-2">Smartlog AI</h1>
+                <h2 class="text-2xl font-light mb-12">Người đồng hành thông minh cho ngành logistics Việt Nam</h2>
+                
+                <div class="value-proposition w-full">
+                    <p class="text-xl mb-8 font-medium">Tự động hóa <span class="text-2xl font-bold text-yellow-400">80%</span> quyết định vận hành và dẫn đầu thị trường ASEAN đến 2035</p>
+                    
+                    <div class="flex items-center space-x-6 mt-12">
+                        <div class="metric-box text-center">
+                            <p class="text-sm text-gray-300">Dự kiến đến 2035</p>
+                            <p class="text-3xl font-bold text-yellow-400">ROI 300%+</p>
+                        </div>
+                        
+                        <div class="px-4 py-2 bg-blue-800 bg-opacity-50 rounded-lg">
+                            <i class="fas fa-robot text-xl mr-2"></i>
+                            <span>AI-powered Logistics</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-section flex justify-between items-end pb-6">
+                <div class="company-info text-sm text-gray-300">
+                    <p>© 2025 Smartlog AI</p>
+                </div>
+                <div class="presentation-info text-sm text-gray-300">
+                    <p>Chuyển đổi Logistics Thông minh</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
