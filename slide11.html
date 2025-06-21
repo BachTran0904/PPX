@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Khung phát triển "Run-Grow-Transform"</title>
+    <title>Các Thành Phần Kiến Trúc Chính & Đảm Bảo Tin Cậy</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&amp;display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
     <style>
         body {
@@ -43,45 +43,52 @@
             opacity: 0.05;
             z-index: 1;
         }
-        .framework-level {
+        .component-card {
             background-color: rgba(255, 255, 255, 0.05);
-            border: 1px solid rgba(0, 194, 182, 0.3);
-            border-radius: 12px;
-            transition: all 0.2s ease;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(0, 194, 182, 0.2);
         }
-        .framework-level:hover {
+        .component-card:hover {
             background-color: rgba(0, 194, 182, 0.1);
+            border-color: rgba(0, 194, 182, 0.4);
         }
-        .level-icon {
-            width: 70px;
-            height: 70px;
+        .feature-icon {
+            width: 50px;
+            height: 50px;
             display: flex;
             align-items: center;
             justify-content: center;
-            border-radius: 50%;
+            border-radius: 10px;
             background-color: rgba(0, 194, 182, 0.2);
-            margin: 0 auto 1rem;
-        }
-        .run-icon {
             color: #00c2b6;
+            font-size: 1.5rem;
         }
-        .grow-icon {
-            color: #ffc107;
+        .reliability-card {
+            background-color: rgba(255, 255, 255, 0.05);
+            border-radius: 8px;
+            transition: all 0.2s ease;
+            border: 1px solid transparent;
         }
-        .transform-icon {
-            color: #68d391;
+        .reliability-card:hover {
+            background-color: rgba(0, 194, 182, 0.05);
+            border-color: rgba(0, 194, 182, 0.3);
         }
-        .price-tag {
-            background-color: rgba(255, 255, 255, 0.1);
-            border-radius: 16px;
-            font-size: 0.85rem;
-            padding: 0.25rem 0.75rem;
+        .tech-tag {
+            background-color: rgba(0, 194, 182, 0.1);
+            color: #00c2b6;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 0.7rem;
             display: inline-block;
-            margin-top: 0.5rem;
+            margin-right: 4px;
+            margin-bottom: 4px;
         }
-        .gartner-logo {
-            width: 80px;
-            opacity: 0.7;
+        .stats-card {
+            background-color: rgba(255, 255, 255, 0.05);
+            border-radius: 8px;
+            padding: 12px;
+            text-align: center;
         }
     </style>
 </head>
@@ -90,115 +97,213 @@
         <!-- Background pattern -->
         <div class="bg-pattern">
             <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-                <path fill="#FFFFFF" d="M42.9,-68.5C55.9,-61.5,67.2,-50.9,75.1,-37.6C83,-24.3,87.5,-8.3,85.8,6.8C84.1,21.9,76.3,36,66.4,48.6C56.5,61.2,44.3,72.3,30.2,77.3C16,82.3,0,81.2,-16.2,78C-32.5,74.8,-49,69.6,-60.5,59C-72.1,48.3,-78.7,32.3,-79,16.4C-79.4,0.5,-73.6,-15.2,-65.2,-28.1C-56.9,-40.9,-46,-50.9,-34.1,-58.6C-22.2,-66.2,-9.2,-71.6,3.3,-76.7C15.7,-81.8,29.9,-75.5,42.9,-68.5Z" transform="translate(100 100)"></path>
+                <path fill="#FFFFFF" d="M42.9,-68.5C55.9,-61.5,67.2,-50.9,75.1,-37.6C83,-24.3,87.5,-8.3,85.8,6.8C84.1,21.9,76.3,36,66.4,48.6C56.5,61.2,44.3,72.3,30.2,77.3C16,82.3,0,81.2,-16.2,78C-32.5,74.8,-49,69.6,-60.5,59C-72.1,48.3,-78.7,32.3,-79,16.4C-79.4,0.5,-73.6,-15.2,-65.2,-28.1C-56.9,-40.9,-46,-50.9,-34.1,-58.6C-22.2,-66.2,-9.2,-71.6,3.3,-76.7C15.7,-81.8,29.9,-75.5,42.9,-68.5Z" transform="translate(100 100)" />
             </svg>
         </div>
         
         <div class="content-area flex flex-col justify-between p-10 h-full">
             <!-- Header Section -->
-            <div class="header-section mb-6">
+            <div class="header-section mb-4">
                 <div class="accent-bar mb-3"></div>
-                <h1 class="text-3xl font-bold mb-2">Khung phát triển "Run-Grow-Transform"</h1>
-                <p class="text-lg text-gray-300 w-3/4">Theo khung Gartner, đảm bảo sự cân bằng giữa lợi ích ngắn hạn và chuyển đổi dài hạn</p>
+                <h1 class="text-3xl font-bold mb-2">Các Thành Phần Kiến Trúc Chính & Đảm Bảo Tin Cậy</h1>
+                <p class="text-lg text-gray-300 w-3/4">Công nghệ tiên tiến được tích hợp nhịp nhàng cho hệ thống AI đáng tin cậy</p>
             </div>
             
             <!-- Main Content Section -->
-            <div class="main-content">
-                <!-- Framework Description -->
-                <div class="highlight-box p-4 mb-6 w-3/4 flex items-center">
-                    <div class="mr-4">
-                        <img src="https://www.gartner.com/imagesrv/global/svg/gartner-logo-alt.svg" alt="Gartner" class="gartner-logo">
-                    </div>
-                    <div>
-                        <p class="text-gray-300">Mô hình <span class="font-semibold text-cyan-400">Run-Grow-Transform</span> được Gartner khuyến nghị giúp doanh nghiệp logistics phân bổ nguồn lực hợp lý: vừa tối ưu hoạt động hiện tại, vừa thúc đẩy phát triển và đổi mới dài hạn.</p>
-                    </div>
-                </div>
-                
-                <!-- Framework Levels -->
-                <div class="grid grid-cols-3 gap-6 mb-6">
-                    <!-- Level 1 - RUN -->
-                    <div class="framework-level p-6 text-center">
-                        <div class="level-icon run-icon">
-                            <i class="fas fa-tachometer-alt text-3xl"></i>
-                        </div>
-                        <h3 class="text-xl font-bold text-cyan-400 mb-3">RUN</h3>
-                        <h4 class="text-lg font-medium text-white mb-3">Tối ưu hóa hiệu quả & chi phí</h4>
-                        <p class="text-sm text-gray-300 mb-4">Tự động hóa các tác vụ lặp lại, nâng cao hiệu quả hoạt động cơ bản và giảm thiểu chi phí vận hành thông qua AI đơn giản.</p>
-                        <div class="price-tag text-cyan-400">
-                            $25,000 - $400,000
-                        </div>
-                        <div class="mt-4 text-left">
-                            <p class="text-sm text-gray-400 mb-1">Ứng dụng tiêu biểu:</p>
-                            <ul class="text-xs text-gray-300 list-disc pl-5 space-y-1">
-                                <li>Conversational AI Customer Support</li>
-                                <li>AI Agent Vision</li>
-                                <li>Basic Fraud Detection</li>
-                            </ul>
+            <div class="main-content flex-1 flex flex-row space-x-6">
+                <!-- Left Column - Architecture Components -->
+                <div class="w-1/2 space-y-4">
+                    <h2 class="text-xl font-semibold text-cyan-400 mb-2">Kiến Trúc Hệ Thống</h2>
+                    
+                    <!-- Component 1: Reasoning Engine -->
+                    <div class="component-card p-4">
+                        <div class="flex items-start">
+                            <div class="feature-icon mr-4 flex-shrink-0">
+                                <i class="fas fa-brain"></i>
+                            </div>
+                            <div>
+                                <div class="flex items-center">
+                                    <h3 class="text-lg font-semibold text-white">Động Cơ Suy Luận</h3>
+                                    <span class="ml-2 text-xs bg-cyan-900 bg-opacity-50 text-cyan-300 px-2 py-1 rounded">The "Brain"</span>
+                                </div>
+                                <p class="text-sm text-gray-300 mt-1">Mô hình Ngôn ngữ Lớn được tinh chỉnh làm động cơ suy luận cho tác tử cấp cao</p>
+                                
+                                <div class="flex flex-wrap mt-2">
+                                    <span class="tech-tag">Llama 3</span>
+                                    <span class="tech-tag">GPT-4/o1-preview</span>
+                                </div>
+                                
+                                <div class="mt-2 bg-blue-900 bg-opacity-20 p-2 rounded text-sm">
+                                    <span class="text-cyan-400 font-medium">Vai Trò:</span>
+                                    <p class="text-gray-300 mt-1 text-xs">Hiểu yêu cầu phức tạp, phân rã thành chuỗi nhiệm vụ và phân công cho tác tử chuyên môn</p>
+                                </div>
+                            </div>
                         </div>
                     </div>
                     
-                    <!-- Level 2 - GROW -->
-                    <div class="framework-level p-6 text-center">
-                        <div class="level-icon grow-icon">
-                            <i class="fas fa-chart-line text-3xl"></i>
-                        </div>
-                        <h3 class="text-xl font-bold text-yellow-400 mb-3">GROW</h3>
-                        <h4 class="text-lg font-medium text-white mb-3">Nâng cao quyết định & tối ưu quy trình</h4>
-                        <p class="text-sm text-gray-300 mb-4">Tích hợp AI vào quy trình cốt lõi, hỗ trợ ra quyết định thông minh và nâng cao khả năng cạnh tranh dựa trên dữ liệu.</p>
-                        <div class="price-tag text-yellow-400">
-                            $50,000 - $400,000
-                        </div>
-                        <div class="mt-4 text-left">
-                            <p class="text-sm text-gray-400 mb-1">Ứng dụng tiêu biểu:</p>
-                            <ul class="text-xs text-gray-300 list-disc pl-5 space-y-1">
-                                <li>Route Optimization & Predictive ETA</li>
-                                <li>Predictive Maintenance</li>
-                                <li>Dynamic Demand Forecasting</li>
-                            </ul>
+                    <!-- Component 2: Micro Agents -->
+                    <div class="component-card p-4">
+                        <div class="flex items-start">
+                            <div class="feature-icon mr-4 flex-shrink-0">
+                                <i class="fas fa-cogs"></i>
+                            </div>
+                            <div>
+                                <div class="flex items-center">
+                                    <h3 class="text-lg font-semibold text-white">Tác Tử Vi Mô</h3>
+                                    <span class="ml-2 text-xs bg-cyan-900 bg-opacity-50 text-cyan-300 px-2 py-1 rounded">The "Workers"</span>
+                                </div>
+                                <p class="text-sm text-gray-300 mt-1">Các tác tử chuyên biệt thực hiện các nhiệm vụ cụ thể trong hệ thống logistics</p>
+                                
+                                <div class="mt-2 bg-blue-900 bg-opacity-20 p-2 rounded text-sm">
+                                    <p class="text-gray-300 text-xs">Tác tử chuyên biệt xử lý các tác vụ như: ETA prediction, document extraction, và xử lý ngoại lệ</p>
+                                </div>
+                            </div>
                         </div>
                     </div>
                     
-                    <!-- Level 3 - TRANSFORM -->
-                    <div class="framework-level p-6 text-center">
-                        <div class="level-icon transform-icon">
-                            <i class="fas fa-brain text-3xl"></i>
+                    <!-- Component 3: Long-term Memory -->
+                    <div class="component-card p-4">
+                        <div class="flex items-start">
+                            <div class="feature-icon mr-4 flex-shrink-0">
+                                <i class="fas fa-database"></i>
+                            </div>
+                            <div>
+                                <div class="flex items-center">
+                                    <h3 class="text-lg font-semibold text-white">Bộ Nhớ Dài Hạn</h3>
+                                    <span class="ml-2 text-xs bg-cyan-900 bg-opacity-50 text-cyan-300 px-2 py-1 rounded">Vector Database Core</span>
+                                </div>
+                                <p class="text-sm text-gray-300 mt-1">Lưu trữ bộ nhớ tình tiết và ngữ nghĩa để phản hồi được cá nhân hóa</p>
+                                
+                                <div class="flex flex-wrap mt-2">
+                                    <span class="tech-tag">Vector Embeddings</span>
+                                    <span class="tech-tag">Semantic Search</span>
+                                </div>
+                                
+                                <div class="mt-2 bg-blue-900 bg-opacity-20 p-2 rounded text-sm">
+                                    <span class="text-cyan-400 font-medium">Ứng dụng:</span>
+                                    <p class="text-gray-300 mt-1 text-xs">Chuyển đổi tương tác, tài liệu, dữ liệu thành vector để tìm kiếm ngữ nghĩa hiệu quả</p>
+                                </div>
+                            </div>
                         </div>
-                        <h3 class="text-xl font-bold text-green-400 mb-3">TRANSFORM</h3>
-                        <h4 class="text-lg font-medium text-white mb-3">Tự chủ & đổi mới chiến lược</h4>
-                        <p class="text-sm text-gray-300 mb-4">Tự chủ hoàn toàn, tối ưu toàn diện và tạo mô hình kinh doanh mới với hệ thống AI cao cấp có khả năng tự phục hồi.</p>
-                        <div class="price-tag text-green-400">
-                            $400,000 - $1,000,000+
-                        </div>
-                        <div class="mt-4 text-left">
-                            <p class="text-sm text-gray-400 mb-1">Ứng dụng tiêu biểu:</p>
-                            <ul class="text-xs text-gray-300 list-disc pl-5 space-y-1">
-                                <li>Autonomous Inventory & Supply Chain</li>
-                                <li>Autonomous Fleet Management</li>
-                                <li>Supply Chain Digital Twin</li>
-                            </ul>
+                    </div>
+                    
+                    <!-- Component 4: Communication Layer -->
+                    <div class="component-card p-4">
+                        <div class="flex items-start">
+                            <div class="feature-icon mr-4 flex-shrink-0">
+                                <i class="fas fa-network-wired"></i>
+                            </div>
+                            <div>
+                                <div class="flex items-center">
+                                    <h3 class="text-lg font-semibold text-white">Lớp Giao Tiếp</h3>
+                                    <span class="ml-2 text-xs bg-cyan-900 bg-opacity-50 text-cyan-300 px-2 py-1 rounded">Communication & Orchestration</span>
+                                </div>
+                                <p class="text-sm text-gray-300 mt-1">Quản lý luồng thông tin và điều phối giữa các tác tử trong hệ thống</p>
+                                
+                                <div class="flex flex-wrap mt-2">
+                                    <span class="tech-tag">API RESTful</span>
+                                    <span class="tech-tag">Event-Driven</span>
+                                    <span class="tech-tag">Kafka</span>
+                                </div>
+                                
+                                <div class="mt-2 bg-blue-900 bg-opacity-20 p-2 rounded text-sm">
+                                    <span class="text-cyan-400 font-medium">Đặc điểm:</span>
+                                    <p class="text-gray-300 mt-1 text-xs">Xử lý các yêu cầu đồng bộ và giao tiếp bất đồng bộ giữa các tác tử với khả năng mở rộng cao</p>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
                 
-                <div class="flex items-center mt-4 justify-center">
-                    <div class="h-1 bg-gradient-to-r from-cyan-400 via-yellow-400 to-green-400 w-2/3 rounded"></div>
-                </div>
-                
-                <div class="flex justify-center mt-4">
-                    <div class="highlight-box p-4 w-3/4 text-center">
-                        <h4 class="text-lg font-semibold text-cyan-400 mb-2">Phát triển theo lộ trình</h4>
-                        <p class="text-gray-300">Smartlog AI đồng hành cùng doanh nghiệp từng bước trong hành trình chuyển đổi số, từ tối ưu hóa hiệu quả cơ bản đến hệ thống logistics tự động hoàn toàn.</p>
+                <!-- Right Column - Reliability Features -->
+                <div class="w-1/2 space-y-4">
+                    <h2 class="text-xl font-semibold text-cyan-400 mb-2">Đảm Bảo Sự Tin Cậy</h2>
+                    
+                    <div class="reliability-card p-4 mb-3">
+                        <h3 class="text-lg font-semibold text-white mb-2 flex items-center">
+                            <i class="fas fa-search-plus text-yellow-400 mr-2"></i>
+                            AI Có Thể Giải Thích
+                        </h3>
+                        
+                        <ul class="space-y-2 pl-8 list-disc text-gray-300 text-sm">
+                            <li>Kỹ thuật LIME & SHAP cho việc giải thích quyết định của mô hình</li>
+                            <li>Bản đồ nhiệt chú ý (attention heat maps) để hiểu trọng số</li>
+                            <li>Chuỗi giải thích quyết định rõ ràng, minh bạch cho người dùng</li>
+                        </ul>
+                        
+                        <div class="highlight-box p-3 mt-3">
+                            <p class="text-xs text-gray-300">Minh bạch hoàn toàn: Mọi quyết định đều có thể truy vết và giải thích rõ ràng</p>
+                        </div>
                     </div>
+                    
+                    <div class="reliability-card p-4 mb-3">
+                        <h3 class="text-lg font-semibold text-white mb-2 flex items-center">
+                            <i class="fas fa-shield-alt text-yellow-400 mr-2"></i>
+                            Kiểm Toán & Giám Sát
+                        </h3>
+                        
+                        <ul class="space-y-2 pl-8 list-disc text-gray-300 text-sm">
+                            <li>Ghi nhật ký quyết định và hành động của hệ thống AI</li>
+                            <li>Hệ thống giám sát thời gian thực các metrics quan trọng</li>
+                            <li>Con người trong vòng lặp (Human-in-the-loop) cho quyết định quan trọng</li>
+                        </ul>
+                        
+                        <div class="highlight-box p-3 mt-3">
+                            <p class="text-xs text-gray-300">Lịch sử bất biến: Ghi chép tất cả hành động trong sổ cái không thể thay đổi</p>
+                        </div>
+                    </div>
+                    
+                    <div class="reliability-card p-4 mb-3">
+                        <h3 class="text-lg font-semibold text-white mb-2 flex items-center">
+                            <i class="fas fa-check-double text-yellow-400 mr-2"></i>
+                            Tuân Thủ Quản Trị
+                        </h3>
+                        
+                        <div class="grid grid-cols-3 gap-2 mb-3">
+                            <div class="bg-opacity-20 bg-white rounded p-2 text-center">
+                                <p class="text-sm font-semibold text-white">NIST AI</p>
+                                <p class="text-xs text-gray-300">Risk Management</p>
+                            </div>
+                            <div class="bg-opacity-20 bg-white rounded p-2 text-center">
+                                <p class="text-sm font-semibold text-white">OECD</p>
+                                <p class="text-xs text-gray-300">AI Principles</p>
+                            </div>
+                            <div class="bg-opacity-20 bg-white rounded p-2 text-center">
+                                <p class="text-sm font-semibold text-white">GMPM</p>
+                                <p class="text-xs text-gray-300">Lifecycle</p>
+                            </div>
+                        </div>
+                        
+                        <div class="highlight-box p-3 mt-2">
+                            <p class="text-xs text-gray-300">Kiểm soát con người: Yêu cầu phê duyệt cho các quyết định có rủi ro cao</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Stats Section -->
+                    <div class="flex space-x-4 mt-4">
+                        <div class="stats-card w-1/2">
+                            <div class="text-xs text-gray-400">Khách hàng tin tưởng</div>
+                            <div class="text-3xl font-bold text-yellow-400 my-1">1000+</div>
+                            <div class="text-xs text-cyan-400">Doanh nghiệp logistics trên toàn quốc</div>
+                        </div>
+                        
+                        <div class="stats-card w-1/2">
+                            <div class="text-xs text-gray-400">Thời gian hoạt động</div>
+                            <div class="text-3xl font-bold text-yellow-400 my-1">99.9%</div>
+                            <div class="text-xs text-cyan-400">Độ tin cậy hệ thống tối đa</div>
+                        </div>
+                    </div>
+                    
                 </div>
             </div>
             
             <!-- Footer Section -->
-            <div class="footer-section flex justify-between items-end mt-3">
-                <div class="company-info text-sm text-gray-300">
+            <div class="footer-section flex justify-between items-end mt-4">
+                <div class="company-info text-sm text-gray-400">
                     <p>© 2025 Smartlog AI</p>
                 </div>
-                <div class="slide-info text-sm text-gray-300">
-                    <p>7 / 15</p>
+                <div class="slide-info text-sm text-gray-400">
+                    <p>9 / 19</p>
                 </div>
             </div>
         </div>
