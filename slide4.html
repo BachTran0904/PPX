@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lý do cần Hệ sinh thái AI toàn diện</title>
+    <title>Tình hình & hạn chế của AI Agent Logistics hiện tại</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
@@ -43,39 +43,40 @@
             opacity: 0.05;
             z-index: 1;
         }
-        .strategy-card {
+        .tech-card {
             background-color: rgba(255, 255, 255, 0.05);
             border-radius: 8px;
-            transition: transform 0.3s ease;
-            border: 1px solid transparent;
-            height: 100%;
+            transition: all 0.3s ease;
         }
-        .strategy-card:hover {
-            border-color: #00c2b6;
-            background-color: rgba(0, 194, 182, 0.1);
-            transform: translateY(-3px);
+        .tech-card:hover {
+            background-color: rgba(255, 255, 255, 0.1);
         }
-        .strategy-icon {
-            width: 60px;
-            height: 60px;
+        .tech-icon {
+            width: 48px;
+            height: 48px;
             display: flex;
             align-items: center;
             justify-content: center;
             border-radius: 12px;
+            background-color: rgba(0, 194, 182, 0.2);
+            color: #00c2b6;
         }
-        .progress-arrow {
-            position: relative;
-            height: 4px;
-            background-color: rgba(0, 194, 182, 0.3);
+        .accuracy-badge {
+            display: inline-block;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 12px;
+            font-weight: 600;
         }
-        .progress-arrow:after {
-            content: '';
-            position: absolute;
-            right: 0;
-            top: -8px;
-            border-left: 10px solid rgba(0, 194, 182, 0.5);
-            border-top: 10px solid transparent;
-            border-bottom: 10px solid transparent;
+        .limitations-icon {
+            width: 32px;
+            height: 32px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            background-color: rgba(255, 107, 107, 0.2);
+            color: #ff6b6b;
         }
     </style>
 </head>
@@ -90,156 +91,130 @@
         
         <div class="content-area flex flex-col justify-between p-10 h-full">
             <!-- Header Section -->
-            <div class="header-section mb-4">
+            <div class="header-section mb-5">
                 <div class="accent-bar mb-3"></div>
-                <h1 class="text-3xl font-bold mb-2">Lý do cần Hệ sinh thái AI toàn diện</h1>
-                <p class="text-lg text-gray-300 w-3/4">Từ phản ứng với thách thức đến kiến tạo tương lai - Xây dựng giải pháp tích hợp cho thời đại chuyển đổi số logistics</p>
+                <h1 class="text-3xl font-bold mb-2">Tình hình & hạn chế của AI Agent Logistics hiện tại</h1>
+                <p class="text-lg text-gray-300 w-3/4">AI trong logistics đã đạt những bước đột phá vượt bậc trong vài năm gần đây</p>
             </div>
             
             <!-- Main Content Section -->
-            <div class="main-content mb-6">
-                <!-- Strategy Cards Grid -->
-                <div class="grid grid-cols-3 gap-6 mb-6">
-                    <!-- Strategy 1 -->
-                    <div class="strategy-card p-5 flex flex-col">
-                        <div class="flex items-center mb-4">
-                            <div class="strategy-icon bg-blue-800 bg-opacity-50 text-2xl text-cyan-400">
-                                <i class="fas fa-puzzle-piece"></i>
+            <div class="main-content flex flex-col">
+                <!-- Technology Cards - Row 1 -->
+                <div class="flex space-x-6 mb-5">
+                    <!-- ML/DL -->
+                    <div class="tech-card p-4 w-1/3">
+                        <div class="flex items-center space-x-3 mb-3">
+                            <div class="tech-icon">
+                                <i class="fas fa-brain text-xl"></i>
                             </div>
-                            <h3 class="text-xl font-semibold ml-3">Giải quyết nghịch lý cốt lõi</h3>
+                            <h3 class="text-lg font-semibold">Machine Learning & Deep Learning</h3>
                         </div>
-                        
-                        <p class="text-sm text-gray-300 mb-4">Ngành logistics đang đối mặt với những nghịch lý sâu sắc từ hiệu quả đến phân mảnh thị trường</p>
-                        
-                        <div class="space-y-3 flex-grow">
-                            <div class="flex items-center space-x-3">
-                                <i class="fas fa-check-circle text-cyan-400"></i>
-                                <p class="text-sm text-white">Tích hợp End-to-End</p>
-                            </div>
-                            <p class="text-xs text-gray-400 ml-6">Phá vỡ các "ốc đảo" dữ liệu và quy trình, tối ưu chi phí toàn chuỗi</p>
-                            
-                            <div class="flex items-center space-x-3">
-                                <i class="fas fa-check-circle text-cyan-400"></i>
-                                <p class="text-sm text-white">Kiến trúc Mở & Modular</p>
-                            </div>
-                            <p class="text-xs text-gray-400 ml-6">Logistics-as-a-Service (LaaS) giúp DNVVN tiếp cận công nghệ tiên tiến</p>
-                        </div>
-                        
-                        <div class="mt-4 px-3 py-1 bg-blue-900 bg-opacity-50 rounded-lg self-start">
-                            <span class="text-xs text-gray-300">Từ <span class="text-cyan-400">manh mún</span> đến <span class="text-cyan-400">liên kết</span></span>
+                        <p class="text-sm text-gray-300 mb-3">Mô hình dự báo tuyến đường (ETA), tối ưu tồn kho, phát hiện bất thường</p>
+                        <div class="accuracy-badge bg-green-900 text-green-400">
+                            Độ chính xác > 90%
                         </div>
                     </div>
                     
-                    <!-- Strategy 2 -->
-                    <div class="strategy-card p-5 flex flex-col">
-                        <div class="flex items-center mb-4">
-                            <div class="strategy-icon bg-blue-800 bg-opacity-50 text-2xl text-yellow-400">
-                                <i class="fas fa-cogs"></i>
+                    <!-- NLP -->
+                    <div class="tech-card p-4 w-1/3">
+                        <div class="flex items-center space-x-3 mb-3">
+                            <div class="tech-icon">
+                                <i class="fas fa-comments text-xl"></i>
                             </div>
-                            <h3 class="text-xl font-semibold ml-3">Xây dựng nền tảng tương lai</h3>
+                            <h3 class="text-lg font-semibold">NLP & Conversational AI</h3>
                         </div>
-                        
-                        <p class="text-sm text-gray-300 mb-4">Một hệ sinh thái AI là điều kiện tiên quyết cho chuỗi cung ứng tự động hoàn toàn</p>
-                        
-                        <div class="space-y-3 flex-grow">
-                            <div class="flex items-center space-x-3">
-                                <i class="fas fa-check-circle text-yellow-400"></i>
-                                <p class="text-sm text-white">Quản trị Dữ liệu & MLOps tập trung</p>
-                            </div>
-                            <p class="text-xs text-gray-400 ml-6">Đảm bảo chất lượng dữ liệu, giám sát hiệu năng mô hình AI</p>
-                            
-                            <div class="flex items-center space-x-3">
-                                <i class="fas fa-check-circle text-yellow-400"></i>
-                                <p class="text-sm text-white">Data pipeline tích hợp</p>
-                            </div>
-                            <p class="text-xs text-gray-400 ml-6">Giải quyết hạn chế của các giải pháp AI rời rạc hiện tại</p>
-                        </div>
-                        
-                        <div class="mt-4 px-3 py-1 bg-blue-900 bg-opacity-50 rounded-lg self-start">
-                            <span class="text-xs text-gray-300">Từ <span class="text-yellow-400">đơn lẻ</span> đến <span class="text-yellow-400">tích hợp</span></span>
+                        <p class="text-sm text-gray-300 mb-3">Chatbot và trợ lý ảo (Agent) giải quyết câu hỏi thường gặp</p>
+                        <div class="accuracy-badge bg-yellow-900 text-yellow-400">
+                            Xử lý 60-80% câu hỏi
                         </div>
                     </div>
                     
-                    <!-- Strategy 3 -->
-                    <div class="strategy-card p-5 flex flex-col">
-                        <div class="flex items-center mb-4">
-                            <div class="strategy-icon bg-blue-800 bg-opacity-50 text-2xl text-green-400">
-                                <i class="fas fa-robot"></i>
+                    <!-- Computer Vision -->
+                    <div class="tech-card p-4 w-1/3">
+                        <div class="flex items-center space-x-3 mb-3">
+                            <div class="tech-icon">
+                                <i class="fas fa-eye text-xl"></i>
                             </div>
-                            <h3 class="text-xl font-semibold ml-3">Tiến tới Agentic AI</h3>
+                            <h3 class="text-lg font-semibold">Computer Vision & OCR</h3>
                         </div>
-                        
-                        <p class="text-sm text-gray-300 mb-4">Chuyển dịch từ AI chỉ "đề xuất" sang hệ thống có khả năng "tự quyết định và hành động"</p>
-                        
-                        <div class="space-y-3 flex-grow">
-                            <div class="flex items-center space-x-3">
-                                <i class="fas fa-check-circle text-green-400"></i>
-                                <p class="text-sm text-white">Hệ thống Multi AI Agents</p>
-                            </div>
-                            <p class="text-xs text-gray-400 ml-6">Các tác tử chuyên biệt (tác tử mua hàng, điều phối, quản lý rủi ro) tự phối hợp</p>
-                            
-                            <div class="flex items-center space-x-3">
-                                <i class="fas fa-check-circle text-green-400"></i>
-                                <p class="text-sm text-white">Chuỗi cung ứng tự hành</p>
-                            </div>
-                            <p class="text-xs text-gray-400 ml-6">Trong khuôn khổ quản trị chặt chẽ, AI có thể tự ra quyết định và hành động</p>
-                        </div>
-                        
-                        <div class="mt-4 px-3 py-1 bg-blue-900 bg-opacity-50 rounded-lg self-start">
-                            <span class="text-xs text-gray-300">Từ <span class="text-green-400">trợ lý</span> đến <span class="text-green-400">đồng nghiệp</span></span>
+                        <p class="text-sm text-gray-300 mb-3">Tự động trích xuất thông tin từ chứng từ vận tải, hóa đơn</p>
+                        <div class="accuracy-badge bg-green-900 text-green-400">
+                            Độ chính xác > 95%
                         </div>
                     </div>
                 </div>
                 
-                <!-- Progression Timeline -->
-                <div class="highlight-box p-5 mt-4">
-                    <h3 class="text-lg font-medium mb-4 text-cyan-400">Lộ trình chuyển đổi: Từ phản ứng đến kiến tạo tương lai</h3>
+                <!-- Technology Cards - Row 2 -->
+                <div class="flex space-x-6 mb-6">
+                    <!-- MLOps -->
+                    <div class="tech-card p-4 w-1/3">
+                        <div class="flex items-center space-x-3 mb-3">
+                            <div class="tech-icon">
+                                <i class="fas fa-cogs text-xl"></i>
+                            </div>
+                            <h3 class="text-lg font-semibold">MLOps & DataOps</h3>
+                        </div>
+                        <p class="text-sm text-gray-300">Hệ thống CI/CD cho mô hình, giám sát drift, tự động retrain đang trở nên phổ biến</p>
+                    </div>
                     
-                    <div class="flex items-center justify-between relative mb-1">
-                        <div class="text-center w-1/4">
-                            <div class="bg-blue-800 bg-opacity-50 h-10 w-10 flex items-center justify-center rounded-full mx-auto mb-2">
-                                <i class="fas fa-tools text-gray-300"></i>
+                    <!-- Multi-Agent -->
+                    <div class="tech-card p-4 w-1/3">
+                        <div class="flex items-center space-x-3 mb-3">
+                            <div class="tech-icon">
+                                <i class="fas fa-robot text-xl"></i>
                             </div>
-                            <p class="text-sm text-gray-300">Giải quyết vấn đề</p>
+                            <h3 class="text-lg font-semibold">Agentic AI & Multi-Agent Systems</h3>
+                        </div>
+                        <p class="text-sm text-gray-300">Xu hướng mới kết hợp nhiều "agent" chuyên biệt, phối hợp với nhau để tự động hóa end-to-end workflows</p>
+                    </div>
+                    
+                    <!-- Current Development -->
+                    <div class="highlight-box p-4 w-1/3">
+                        <h3 class="text-lg font-semibold text-cyan-400 mb-2">Xu hướng hiện tại</h3>
+                        <p class="text-sm text-gray-300">Các giải pháp AI ngày càng trở thành điểm cạnh tranh chính trong ngành logistics với mức độ triển khai tăng mạnh</p>
+                    </div>
+                </div>
+                
+                <!-- Limitations Section -->
+                <div class="highlight-box p-4 mb-4" style="background-color: rgba(255, 107, 107, 0.1); border-left-color: #ff6b6b;">
+                    <h3 class="text-xl font-semibold text-red-400 mb-2">Hạn chế của các giải pháp AI hiện tại</h3>
+                    
+                    <div class="grid grid-cols-3 gap-4 mt-3">
+                        <div class="flex items-start space-x-3">
+                            <div class="limitations-icon">
+                                <i class="fas fa-puzzle-piece"></i>
+                            </div>
+                            <p class="text-sm text-gray-300">Rời rạc, chỉ giải quyết từng bài toán đơn lẻ (ví dụ: chỉ tối ưu tuyến đường hoặc chỉ chatbot CS)</p>
                         </div>
                         
-                        <div class="text-center w-1/4">
-                            <div class="bg-blue-800 bg-opacity-50 h-10 w-10 flex items-center justify-center rounded-full mx-auto mb-2">
-                                <i class="fas fa-network-wired text-cyan-400"></i>
+                        <div class="flex items-start space-x-3">
+                            <div class="limitations-icon">
+                                <i class="fas fa-unlink"></i>
                             </div>
-                            <p class="text-sm text-cyan-400">Tích hợp hệ sinh thái</p>
+                            <p class="text-sm text-gray-300">Thiếu nền tảng tích hợp, dữ liệu và pipeline chung, gây khó khăn khi mở rộng hoặc thêm chức năng mới</p>
                         </div>
                         
-                        <div class="text-center w-1/4">
-                            <div class="bg-blue-800 bg-opacity-50 h-10 w-10 flex items-center justify-center rounded-full mx-auto mb-2">
-                                <i class="fas fa-brain text-yellow-400"></i>
+                        <div class="flex items-start space-x-3">
+                            <div class="limitations-icon">
+                                <i class="fas fa-exclamation-triangle"></i>
                             </div>
-                            <p class="text-sm text-yellow-400">Chuỗi cung ứng thông minh</p>
+                            <p class="text-sm text-gray-300">Chưa có cơ chế quản lý agent, giám sát hiệu năng và rủi ro xuyên suốt</p>
                         </div>
-                        
-                        <div class="text-center w-1/4">
-                            <div class="bg-blue-800 bg-opacity-50 h-10 w-10 flex items-center justify-center rounded-full mx-auto mb-2">
-                                <i class="fas fa-rocket text-green-400"></i>
-                            </div>
-                            <p class="text-sm text-green-400">Tự chủ hoàn toàn</p>
-                        </div>
-                        
-                        <!-- Progress Arrow -->
-                        <div class="progress-arrow absolute top-5 left-0 right-0"></div>
                     </div>
                 </div>
             </div>
             
             <!-- Footer Section -->
-            <div class="footer-section flex justify-between items-end mt-2">
+            <div class="footer-section flex justify-between items-end mt-auto">
                 <div class="company-info text-sm text-gray-300">
                     <p>© 2025 Smartlog AI</p>
                 </div>
                 <div class="slide-info text-sm text-gray-300">
-                    <p>4 / 19</p>
+                    <p>3 / 20</p>
                 </div>
             </div>
         </div>
     </div>
+    <script src="script.js"></script>
 </body>
 </html>
